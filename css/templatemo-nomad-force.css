@@ -735,30 +735,5 @@ strong {
     text-decoration: underline; /* Hiệu ứng gạch chân khi hover */
     color: #0d65c7; /* Màu xanh đậm hơn khi di chuột vào */
 }
-.goi-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-}
 
-.goi-icon:hover {
-    background-color: #218838;
-    transform: scale(1.1);
-}
-
-.goi-icon .goi-icon-img {
-    margin-right: 8px;
-    font-size: 24px;
-}
 
