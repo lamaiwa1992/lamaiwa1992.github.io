@@ -141,7 +141,7 @@ a:hover {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
-  z-index: -100;
+  overflow: hidden;
 }
 
 .custom-video {
