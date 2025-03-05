@@ -218,7 +218,7 @@ strong {
 }
 
 .navbar-brand {
-  color: var(--primary-color);
+  color: #9cc359;
   font-size: 24px;
   font-weight: var(--font-weight-bold);
 }
@@ -371,7 +371,7 @@ strong {
 .heroText {
   position: absolute;
   z-index: 9;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 85%;
