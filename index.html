@@ -36,28 +36,28 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
     </head>
     
     <body >
-    
+        <!--
+             cai them tieng nhat
+        -->
+        <div class="language-selector">
+            <a href="#" onclick="setLanguage('vi')">Tiếng Việt</a> | 
+            <a href="#" onclick="setLanguage('ja')">日本語</a>
+        </div>
         <main>
-
             <section class="hero" id="hero">
                 <div class="heroText">
-                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800" id="title">
                         BƠ MILK TEA
                     </h1>
-                    <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                        Trà Chanh - Trà Sữa - Cà Phê - Đồ Ăn Vặt - Tô Tượng  </p>
-                    
-                        
+                    <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000" id="subtitle">
+                        Trà Chanh - Trà Sữa - Cà Phê - Đồ Ăn Vặt - Tô Tượng
+                    </p>
                 </div>
-
                 <div class="videoWrapper">
                     <video autoplay="" loop="" muted="" playsinline class="custom-video" poster="videos/IMG_1183.JPG">
                         <source src="videos/videonen.mp4" type="video/mp4">
                     </video>
                 </div>
-<!--
-                <div class="overlay"></div>
--->
             </section>
 
             <nav class="navbar navbar-expand-lg bg-light shadow-lg">
@@ -541,7 +541,24 @@ trình chiếu hình ảnh các món trà
                 button.classList.toggle('open'); // Thêm hoặc bỏ class 'open' để thay đổi kích thước
             }
         </script>
-
+        <!-- cai them tieng nhat -->
+        <script>
+            const translations = {
+                'vi': {
+                    'title': 'BƠ MILK TEA',
+                    'subtitle': 'Trà Chanh - Trà Sữa - Cà Phê - Đồ Ăn Vặt - Tô Tượng'
+                },
+                'ja': {
+                    'title': 'ボーミルクティー',
+                    'subtitle': 'レモンティー - タピオカティー - コーヒー - おやつ - 塗り絵'
+                }
+            };
+        
+            function setLanguage(lang) {
+                document.getElementById('title').innerText = translations[lang]['title'];
+                document.getElementById('subtitle').innerText = translations[lang]['subtitle'];
+            }
+        </script>
 
     </body>
 </html>
