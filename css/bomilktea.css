@@ -1605,3 +1605,18 @@ strong {
         flex: 1 1 100%; /* 1 product per row */
     }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Giúp ngừng cuộn ngang */
+}
+
+.container {
+  max-width: 100%;
+}
+
