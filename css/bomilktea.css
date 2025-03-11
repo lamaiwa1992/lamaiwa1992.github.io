@@ -1606,17 +1606,5 @@ strong {
     }
 }
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Giúp ngừng cuộn ngang */
-}
-
-.container {
-  max-width: 100%;
-}
 
