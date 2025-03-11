@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* Cài đặt chung cho up, down, transform1, transform2
+   (Cài đặt trong trạng thái chờ)
+---------------------------------------------------------------------------*/
+.up, .down, .transform1, .transform2 {
+	position: relative;
+	opacity: 0;		/* Độ trong suốt (trạng thái trong suốt) */
+}
+
+/* Cài đặt chung cho up, down, transform1, transform2
+   (Cài đặt hành động khi phần tử hiển thị)
+---------------------------------------------------------------------------*/
+.upstyle, .downstyle, .transform1style, .transform2style {
+	opacity: 1;				/* Độ trong suốt (trạng thái màu sắc 100%) */
+	transition: 1s 0.5s;	/* 1s là thời gian thực thi hoạt hình (1.5 giây). 0.5s là thời gian trì hoãn bắt đầu sau 0.5 giây. */
+}
+
+
+/* Kiểu up. Phần tử xuất hiện từ dưới lên */
+---------------------------------------------------------------------------*/
+/* Cài đặt trong trạng thái chờ */
+.up {
+	bottom: -20px;	/* Bắt đầu từ vị trí 20px dưới giá trị chuẩn */
+}
+
+/* Hành động khi phần tử hiển thị */
+.upstyle {
+	bottom: 0px;	/* Trở về vị trí chuẩn */
+}
+
+
+/* Kiểu down. Phần tử xuất hiện từ trên xuống */
+---------------------------------------------------------------------------*/
+/* Cài đặt trong trạng thái chờ */
+.down {
+	top: -20px;	/* Bắt đầu từ vị trí 20px trên giá trị chuẩn */
+}
+
+/* Hành động khi phần tử hiển thị */
+.downstyle {
+	top: 0px;	/* Trở về vị trí chuẩn */
+}
+
+
+/* Kiểu transform1. Phần tử quay tại chỗ */
+---------------------------------------------------------------------------*/
+/* Cài đặt trong trạng thái chờ */
+.transform1 {
+	transform: scaleX(0);	/* Bắt đầu với chiều rộng 0% */
+}
+
+/* Hành động khi phần tử hiển thị */
+.transform1style {
+	transform: scaleX(1);	/* Trở về chiều rộng 100% */
+}
+
+
+/* Kiểu transform2. Phần tử đứng dậy từ trạng thái ngã */
+---------------------------------------------------------------------------*/
+/* Cài đặt trong trạng thái chờ */
+.transform2 {
+	transform: perspective(400px) translateZ(-70px) rotateX(50deg);
+}
+
+/* Hành động khi phần tử hiển thị */
+.transform2style {
+	transform: perspective(400px) translateZ(0px) rotateX(0deg);
+}
+
+
+/* Kiểu blur. Phần tử xuất hiện với hiệu ứng mờ */
+---------------------------------------------------------------------------*/
+/* Cài đặt trong trạng thái chờ */
+.blur {
+	opacity: 0;	/* Độ trong suốt (trạng thái trong suốt) */
+	filter: blur(30px);
+	transform: scale(1.1);
+}
+
+/* Hành động khi phần tử hiển thị */
+.blurstyle {
+	opacity: 1;
+	filter: blur(0);
+	transform: scale(1);
+	transition: 1s 0.5s;
+}
+
+
+/* Kiểu transform3. Phần tử xuất hiện từ kích thước nhỏ lên kích thước gốc */
+---------------------------------------------------------------------------*/
+/* Cài đặt keyframe (hoạt hình) */
+@keyframes transform3 {
+0% {
+	transform: scale(0);
+}
+50% {
+	transform: scale(1.05);
+}
+70% {
+	transform: scale(0.99);
+}
+100% {
+	transform: scale(1);
+}
+}
+
+/* Cài đặt trong trạng thái chờ */
+.transform3 {
+	transform: scale(0);
+}
+
+/* Hành động khi phần tử hiển thị */
+.transform3style {
+	animation: transform3 0.8s ease-out 0.5s both;
+}

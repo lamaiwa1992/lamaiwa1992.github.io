@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Mẫu trang webcho phòng khám tư,văn phòng,công ty nhỏ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nhập mô tả trang web tại đây">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="trigger-point">
+
+<header>
+
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Mẫu trang webcho phòng khám tư,văn phòng,công ty nhỏ"></a></h1>
+
+<div class="banner">
+<a href="#"><img src="images/banner1.jpg" alt=""></a>
+</div>
+
+<address>
+<div class="tel">03-0000-0000</div>
+<span class="small">Giờ tiếp nhận: 9:00 AM - 7:00 PM</span>
+</address>
+
+<!--Nút thay đổi kích thước văn bản-->
+<div id="f-size">
+<p>Kích thước văn bản</p>
+<ul>
+<li id="f-small"></li>
+<li id="f-large"></li>
+</ul>
+</div>
+
+</header>
+
+</div>
+<!--/#trigger-point-->
+
+<!--Khối mở/đóng-->
+<div id="menubar">
+
+<nav>
+<ul>
+<li><a href="index.html">Trang chủ<span>Home</span></a></li>
+<li><a href="info.html">Về chúng tôi<span>Information</span></a>
+	<ul>
+	<li><a href="info.html#link1">Về chúng tôi</a></li>
+	<li><a href="info.html#link2">Dành cho bệnh nhân mới</a></li>
+	<li><a href="info.html#link3">Lời chào từ Giám đốc</a></li>
+	</ul>
+</li>
+<li><a href="service.html">Dịch vụ y tế<span>Medical Service</span></a>
+	<ul>
+	<li><a href="service2.html">Nội khoa tổng quát</a></li>
+	<li><a href="service2.html">Nhi khoa</a></li>
+	<li><a href="service2.html">Da liễu</a></li>
+	</ul>
+</li>
+<li><a href="staff.html">Giới thiệu nhân viên<span>Staff</span></a></li>
+<li><a href="faq.html">Câu hỏi thường gặp<span>Faq</span></a></li>
+<li><a href="access.html">Truy cập<span>Access</span></a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#menubar-->
+
+<div id="contents">
+
+<main>
+
+<section>
+
+<h2><span class="uline">Cách sử dụng mẫu này</span></h2>
+
+<h3>Thiết lập thẻ title rất quan trọng. Hãy chọn từ ngữ cẩn thận và nhập chính xác.</h3>
+<p>Trước tiên, hãy mở mã nguồn HTML và chỉnh sửa<br>
+<span class="look">&lt;title&gt;Mẫu trang webcho phòng khám tư,văn phòng,công ty nhỏ&lt;/title&gt;</span><br>
+sao cho phù hợp với tên trang web của bạn, ví dụ:<br>
+<span class="look">&lt;title&gt;Phòng khám Tokyo Yokohama&lt;/title&gt;</span><br>
+Nếu muốn tối ưu hóa SEO, hãy thêm các từ quan trọng vào đầu tiêu đề.</p>
+<h3>Thay đổi bản quyền.</h3>
+<p>Tiếp theo, ở phần dưới của HTML, thay đổi<br>
+<span class="look">Copyright&copy; Phòng khám Tokyo Yokohama All Rights Reserved.</span><br>
+thành tên trang web của bạn.</p>
+<h3>Thay đổi thẻ meta.</h3>
+<p>Hãy mở mã nguồn HTML và thay đổi thẻ meta.</p>
+<p>Ở phần trên của mã nguồn, thay đổi<br>
+<span class="look">content=&quot;Nhập mô tả trang web tại đây&quot;</span><br>
+bằng mô tả về trang web của bạn. Mô tả này có thể xuất hiện trong kết quả tìm kiếm, vì vậy hãy viết một mô tả ngắn gọn và hấp dẫn.</p>
+<h3>Thay đổi thẻ alt của logo h1</h3>
+<p>Trong HTML, thay đổi<br>
+<span class="look">alt=&quot;Phòng khám Tokyo Yokohama&quot;</span><br>
+thành tên trang web của bạn.</p>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Thay đổi màu sắc của mẫu</span></h2>
+<p>Thay đổi màu sắc tổng thể rất dễ dàng.</p>
+<p>Mở file style.css trong thư mục css và thay đổi các cài đặt trong<br>
+<span class="look">:root {</span><br>
+để thay đổi màu sắc của toàn bộ trang web.</p>
+<p>* Có thể cần điều chỉnh bảng hoặc khối cột nếu cần thiết.</p>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Kích thước văn bản "Nhỏ" và "Lớn"</span></h2>
+<p><strong class="color-theme">Nếu muốn thay đổi kích thước văn bản "Nhỏ" và "Lớn"</strong><br>
+Mở file style.css trong thư mục css và thay đổi các cài đặt trong<br>
+<span class="look">/*Cài đặt kích thước văn bản</span><br>
+theo ý muốn.</p>
+<p><strong class="color-theme">Nếu muốn đặt "Lớn" làm mặc định</strong><br>
+Mở file fontSizeChanger.js trong thư mục js và đọc các chú thích để thay đổi.</p>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Về hình ảnh biểu tượng (Giải thích về Font Awesome)</span></h2>
+<h3>Các hình ảnh không nằm trong thư mục images đều là tài nguyên của Font Awesome.</h3>
+<p><a href="https://fontawesome.com/" target="_blank">Trang chủ Font Awesome</a><br>
+<a href="https://fontawesome.com/v6/search" target="_blank">Danh sách biểu tượng Font Awesome (phiên bản 6)</a></p>
+<p>Có hai cách để chèn biểu tượng vào HTML: sử dụng thẻ i trực tiếp hoặc sử dụng các yếu tố giả trong CSS.<br>
+Để thay thế biểu tượng, hãy đọc <a href="https://template-party.com/tips/tips20211126_font_awesome.html">hướng dẫn</a> của chúng tôi.</p>
+<h3>Các thẻ và file cần thiết để sử dụng Font Awesome.</h3>
+<p>Đoạn mã "Font Awesome" được đọc ở đầu file style.css trong thư mục css.</p>
+<h3>Có thể gặp vấn đề nếu đã qua nhiều năm.</h3>
+<p>Nếu mẫu đột ngột hoạt động không đúng, hãy thay đổi phiên bản file Font Awesome được đọc từ CDN ở đầu file style.css và kiểm tra xem có hoạt động lại không.</p>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Về menu trên</span></h2>
+<p>Khi chiều rộng màn hình nhỏ hơn 900px, menu chính sẽ trở thành khối mở/đóng.<br>
+Để thay đổi giá trị này, mở file main.js trong thư mục js và thay đổi<br>
+<span class="look">if(window.innerWidth &lt;= <span class="color-check">900</span>)</span><br>
+giá trị từ <span class="color-check">900</span>.</p>
+
+<h3>Về menu thả xuống</h3>
+<p>Các menu "Về chúng tôi" và "Dịch vụ y tế" có menu thả xuống.<br>
+Không cần cài đặt đặc biệt để sử dụng menu thả xuống, nhưng hãy đảm bảo đặt chúng vào bên trong thẻ li cha.</p> 
+<h3>Ví dụ đúng</h3>
+<p><span class="look">
+<span class="color-check">&lt;li&gt;&lt;a href=&quot;&quot;&gt;Menu cha&lt;/a&gt;</span><br>
+&lt;ul&gt;<br>
+&lt;li&gt;&lt;a href=&quot;list.html&quot;&gt;Menu thả xuống&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href=&quot;list.html&quot;&gt;Menu thả xuống&lt;/a&gt;&lt;/li&gt;<br>
+&lt;/ul&gt;<br>
+<span class="color-check">&lt;/li&gt;</span>
+</span>
+</p>
+<h3>Ví dụ sai</h3>
+<p><span class="look">
+<span class="color-check">&lt;li&gt;&lt;a href=&quot;&quot;&gt;Menu cha&lt;/a&gt;&lt;/li&gt;</span><br>
+&lt;ul&gt;<br>
+&lt;li&gt;&lt;a href=&quot;list.html&quot;&gt;Menu thả xuống&lt;/a&gt;&lt;/li&gt;<br>
+&lt;li&gt;&lt;a href=&quot;list.html&quot;&gt;Menu thả xuống&lt;/a&gt;&lt;/li&gt;<br>
+&lt;/ul&gt;
+</span>
+</p>
+</section>
+
+<section>
+
+<h2><span class="uline">Về khối trigger-point (rất quan trọng)</span></h2>
+<p>Mẫu này sử dụng khối trigger-point để giữ menu ở đầu màn hình khi cuộn trang.<br>
+Khối này giúp thay đổi độ trong suốt và chiều cao sau khi đạt đến điểm nhất định, vì vậy đừng xóa nó.</p>
+<p>Hãy đảm bảo bao gồm tất cả các yếu tố ở trên khối trigger-point trong khối này.</p>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Về hình ảnh trình chiếu trên trang chủ</span></h2>
+
+<p>File slide.css trong thư mục css và file main.js trong thư mục js chứa các cài đặt cho trình chiếu.<br>
+Trong slide.css, bạn có thể thay đổi các cài đặt về hình ảnh và tốc độ chuyển đổi.<br>
+Trong main.js, bạn có thể thay đổi thời gian hiển thị của mỗi slide.<br>
+Không cần cài đặt thêm khi thêm hình ảnh, nhưng lưu ý không sử dụng hình ảnh quá lớn hoặc quá nhiều để tránh làm chậm trang.</p>
+<h3>Hình ảnh có tỷ lệ khung hình 2:1 được thiết lập để đáp ứng</h3>
+<p>Mẫu này sử dụng hình ảnh 2:1 để đáp ứng.<br>
+Nếu muốn hiển thị hình ảnh với tỷ lệ khác, hãy điều chỉnh<br>
+<span class="look">#mainimg {</span><br>
+trong slide.css.<br>
+Ví dụ, với hình ảnh 16:9, hãy thay đổi<br>
+<span class="look">padding-top: 56%;</span><br>
+trong slide.css.</p>
+<h3>Về văn bản trên trình chiếu</h3>
+<p>Văn bản được nhập trực tiếp trong HTML, hãy thay đổi theo nhu cầu.<br>
+Để thay đổi vị trí văn bản, hãy điều chỉnh justify-content và text-align trong slide.css.</p>
+<p>Nếu không có cài đặt (slide2), văn bản sẽ căn trái.</p>
+<p>Để căn giữa (slide1 và slide3), sử dụng:<br>
+<span class="look">justify-content: center;<br>
+text-align: center;</span></p>
+<p>Để căn phải, sử dụng:<br>
+<span class="look">justify-content: flex-end;<br>
+text-align: right;</span></p>
+<h3>Về hình ảnh trình chiếu</h3>
+<p>Hình ảnh được cung cấp sẵn, bạn có thể sử dụng hoặc chỉnh sửa.<br>
+Các hình ảnh khác ngoài trình chiếu cũng được tạo từ AI và bạn có thể sử dụng chúng.</p>
+<h3>Thay đổi hình ảnh</h3>
+<p>Để thay đổi hình ảnh, hãy ghi đè file hình ảnh trong thư mục images.<br>
+Nếu muốn thay đổi phần mở rộng của file hình ảnh, hãy chỉnh sửa slide.css.</p>
+<p>Hãy nén hình ảnh để giảm dung lượng.<br>
+Nếu hình ảnh quá lớn, trang có thể bị chậm khi tải.</p>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Về trình chiếu hình thu nhỏ trên trang chủ</span></h2>
+<p>Sử dụng slick cho trình chiếu. <a href="https://kenwheeler.github.io/slick/" target="_blank">Trang chủ slick</a><br>
+Chúng tôi không hỗ trợ ngoài hướng dẫn trong mẫu và trên trang web của chúng tôi, hãy tìm kiếm trên Google để biết thêm chi tiết.</p>
+
+<div class="thumbnail-slide mb30">
+
+<img src="images/1.jpg" alt="">
+<img src="images/2.jpg" alt="">
+<img src="images/3.jpg" alt="">
+<img src="images/1.jpg" alt="">
+<img src="images/2.jpg" alt="">
+<img src="images/3.jpg" alt="">
+
+</div>
+<!--/.thumbnail-slide-->
+
+<h3>Hãy chuẩn bị kích thước ảnh trước để chúng hiển thị đẹp</h3>
+<p>Bạn có thể thay đổi số lượng ảnh. Chỉ cần sao chép khối ảnh hiện có trong HTML và thay đổi tên file ảnh.<br>
+Cài đặt trình chiếu có thể chỉnh sửa trong slick.js trong thư mục js.</p>
+<h3>Các thẻ và file cần thiết để sử dụng slick</h3>
+<p>1. Thẻ "jQuery file" ở cuối HTML.<br>
+2. Thẻ "Trình chiếu (slick)" phía dưới.<br>
+3. File js/slick.js trong thư mục js.</p>
+
+</section>
+
+<section>
+
+<h2>Về biểu tượng "Thông báo" trên trang chủ</h2>
+<p>Văn bản trong biểu tượng được nhập trực tiếp trong HTML, hãy chỉnh sửa nếu cần.</p>
+<p>Để thay đổi màu nền, hãy chỉnh sửa style.css trong thư mục css:<br>
+<span class="look">.new dt span</span><br>
+hoặc<br>
+<span class="look">.new .icon-bg1</span><br>
+thay đổi màu nền.</p>
+<p>Để thêm biểu tượng mới, sao chép khối .new .icon-bg1 và thay đổi tên class, ví dụ .icon-bg2, và đặt màu nền mong muốn.<br>
+Sau đó, trong HTML, sử dụng:<br>
+<span class="look">&lt;span class=&quot;<span class="color-check">icon-bg2</span>&quot;&gt;〜〜〜&lt;/span&gt;</span></p>
+<p>Hãy lưu ý không thêm quá nhiều văn bản để tránh làm vỡ layout.</p>
+
+</section>
+
+<section>
+
+<h2>Danh sách ul, ol</h2>
+
+<ol>
+<li>Đây là phần tử ol. Văn bản mẫu.</li>
+<li>Đây là phần tử ol. Văn bản mẫu.</li>
+<li>Đây là phần tử ol. Văn bản mẫu.</li>
+</ol>
+
+<ul>
+<li>Đây là phần tử ul. Văn bản mẫu.</li>
+<li>Đây là phần tử ul. Văn bản mẫu.</li>
+<li>Đây là phần tử ul. Văn bản mẫu.</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2><span class="uline">Về hiệu ứng xuất hiện</span></h2>
+<p>Các ví dụ về hiệu ứng xuất hiện được tổng hợp trong <a href="sample_inview.html">sample_inview.html</a>.<br>
+Bạn có thể dễ dàng thay đổi hoặc tạo hiệu ứng riêng.</p>
+
+<p><img src="images/1.jpg" alt="" class="blur" width="500"></p>
+<p><img src="images/2.jpg" alt="" class="up" width="500"></p>
+<p><img src="images/3.jpg" alt="" class="transform1" width="500"></p>
+
+</section>
+
+</main>
+
+</div>
+<!--/#contents-->
+
+</div>
+<!--/#container-->
+
+<div id="footer-contents">
+
+<div class="left">
+
+<h3>Phòng khám Tokyo Yokohama</h3>
+<p>〒000-0000 Quận Adachi, Tokyo, Nhật Bản<br>
+Điện thoại: 000-0000-0000<br>
+Giờ tiếp nhận: 8:00 - 18:00 từ thứ Hai đến thứ Sáu</p>
+
+<ul class="icons">
+<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+<li><a href="#"><i class="fab fa-line"></i></a></li>
+<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+</ul>
+
+<h3>Giờ khám</h3>
+<table class="ta2">
+<tr>
+<th>&nbsp;</th>
+<th>Thứ Hai</th>
+<th>Thứ Ba</th>
+<th>Thứ Tư</th>
+<th>Thứ Năm</th>
+<th>Thứ Sáu</th>
+<th>Thứ Bảy</th>
+<th>Chủ Nhật</th>
+</tr>
+<tr>
+<td>Buổi sáng</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>ー</td>
+</tr>
+<tr>
+<td>Buổi chiều</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>ー</td>
+<td>ー</td>
+</tr>
+</table>
+<p class="mini">Tiếp nhận khám buổi sáng: 8:30 - 12:30 | Tiếp nhận khám buổi chiều: 14:30 - 18:30</p>
+
+</div>
+<!--/.left-->
+
+<div class="right">
+
+<h3>Địa chỉ</h3>
+<p><a href="https://template-party.com/file/pickup_googlemap.html">Vui lòng xem hướng dẫn thay đổi bản đồ GoogleMap.</a></p>
+<div class="iframe-box">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.0448418561778!2d139.74267721573196!3d35.675897837870934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b89b2e1c8b1%3A0x59a123e3d5ac5ab6!2z44CSMTAwLTAwMTQg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65rC455Sw55S677yR5LiB55uu77yX4oiS77yR!5e0!3m2!1sja!2sjp!4v1545036128899" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+	
+</div>
+<!--/.right-->
+
+</div>
+<!--/#footer-contents-->
+
+<div id="footermenu">
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+</div>
+<!--/#footermenu-->
+
+<footer>
+<small>Bản quyền&copy; <a href="index.html">Bệnh viện mẫu Tokyo Yokohama</a> Tất cả quyền được bảo lưu.</small>
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Thiết kế Web: Template-Party》</a></span>
+</footer>
+
+<!--Nút quay lại đầu trang-->
+<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+
+<!--Nút đóng mở (biểu tượng hamburger)-->
+<div id="menubar_hdr">
+<div class="menu-icon">
+<span></span><span></span><span></span>
+</div>
+</div>
+
+<!--Tải jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--Script thay đổi kích thước chữ-->
+<script src="js/fontSizeChanger.js"></script>
+
+<!--Slide show (slick)-->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/slick.js"></script>
+
+<!--Parallax (inview)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+
+<!--Script đặc biệt cho template này-->
+<script src="js/main.js"></script>
+
+</body>
+</html>

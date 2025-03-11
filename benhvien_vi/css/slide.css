@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+/*Trình chiếu ảnh (sử dụng background trong CSS)
+Ở đây, chúng tôi chỉ định tỷ lệ ảnh 2:1 (1÷2=0.5).
+Nếu bạn muốn sử dụng tỷ lệ ảnh khác, hãy thay đổi giá trị padding-top của #mainimg.
+---------------------------------------------------------------------------*/
+/*Khối bao gồm 3 hình ảnh*/
+#mainimg {
+    width: 100%;
+    height: 0;
+    padding-top: 50%;
+    position: relative;
+    margin-top: 2vw;    /*Khoảng trống phía trên. Khoảng trống giữa menu chính và ảnh.*/
+}
+
+    /*Cài đặt bổ sung cho màn hình có độ rộng dưới 700px*/
+    @media screen and (max-width:700px) {
+
+    #mainimg {
+        margin-bottom: 100px;
+    }
+    
+    }/*Cài đặt bổ sung kết thúc*/
+
+/*Cài đặt chung cho 3 hình ảnh*/
+.slide {
+    width: 100%;height: 100%;
+    position: absolute;right: 0px;top: 0px;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
+    opacity: 0;
+    transition: opacity 1s; /*Thay đổi giá trị 1s ở đây sẽ thay đổi tốc độ chuyển mờ.*/
+}
+
+/*Ảnh đầu tiên*/
+.slide1 {
+    background: url('../images/1.jpg') no-repeat center center / cover; /*Tải ảnh nền đầu tiên*/
+    justify-content: center;    /*Căn giữa khối văn bản*/
+    text-align: center;         /*Căn giữa văn bản*/
+}
+
+/*Ảnh thứ hai*/
+.slide2 {
+    background: url('../images/2.jpg') no-repeat center center / cover; /*Tải ảnh nền thứ hai*/
+}
+
+/*Ảnh thứ ba*/
+.slide3 {
+    background: url('../images/3.jpg') no-repeat center center / cover; /*Tải ảnh nền thứ ba*/
+    justify-content: center;    /*Căn giữa khối văn bản*/
+    text-align: center;         /*Căn giữa văn bản*/
+}
+
+
+/*Cài đặt để chỉ cho phép click vào slide đang hiển thị (không cần thay đổi)
+---------------------------------------------------------------------------*/
+.slide {
+    pointer-events: none; /* Vô hiệu hóa click theo mặc định */
+}
+
+.slide.active {
+    pointer-events: auto; /* Chỉ cho phép click vào slide đang hiển thị */
+}
+
+
+/*Văn bản trên trình chiếu ảnh
+---------------------------------------------------------------------------*/
+#mainimg p {
+    font-size: 3vw;     /*Kích thước chữ. 100vw là 100% chiều rộng màn hình*/
+    font-weight: 600;   /*Độ đậm của chữ. Có thể chỉ định từ 100 đến 900*/
+    color: #fff;        /*Màu chữ*/
+    text-shadow: 2px 2px rgba(0,0,0,0.5), 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+
+/*Nút trên trình chiếu ảnh
+---------------------------------------------------------------------------*/
+/*Cài đặt hộp bao quanh các nút*/
+#mainimg .mainimg-btn {
+    list-style: none;margin: 0;
+    animation: opa1 0s 0.5s both;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;    /*Vị trí đặt từ dưới lên*/
+    width: 100%;
+    background: rgba(0,0,0,0.5);    /*Màu nền. 0,0,0 là màu đen, 0.5 là màu xuất hiện 50%*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;          /*Khoảng cách giữa các nút*/
+    font-size: 22px;    /*Kích thước chữ*/
+    height: 100px;      /*Chiều cao của hộp*/
+}
+
+/*Cài đặt cho mỗi nút*/
+#mainimg .mainimg-btn a {
+    display: block;text-decoration: none;
+    background: #f17100;    /*Màu nền*/
+    color: #fff;            /*Màu chữ*/
+    border-radius: 5px;     /*Bo góc*/
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);    /*Đổ bóng hộp. Phải, dưới, độ mờ, 0,0,0 là màu đen, 0.5 là màu xuất hiện 50%*/
+    padding: 10px 30px; /*Khoảng trống trong nút*/
+}
+
+/*Biểu tượng trong nút*/
+#mainimg .mainimg-btn i {
+    padding-right: 20px;    /*Khoảng trống bên phải của biểu tượng. Khoảng trống giữa biểu tượng và văn bản.*/
+    transform: scale(1.4);  /*Tăng kích thước lên 1.4 lần*/
+}
+
+    /*Cài đặt bổ sung cho màn hình có độ rộng dưới 700px*/
+    @media screen and (max-width:700px) {
+
+    /*Cài đặt hộp bao quanh các nút*/
+    #mainimg .mainimg-btn {
+        background: transparent;    /*Màu nền trong suốt*/
+        bottom: -100px;             /*Sử dụng âm margin để đặt dưới hình ảnh chính*/
+        display: block;     /*Từ ngang sang dọc*/
+    }
+    
+    /*Cài đặt cho mỗi nút*/
+    #mainimg .mainimg-btn a {
+        margin-top: 10px;
+    }
+        
+    }/*Cài đặt bổ sung kết thúc*/

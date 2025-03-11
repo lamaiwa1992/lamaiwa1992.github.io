@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Mẫu trang webcho phòng khám tư,văn phòng,công ty nhỏ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mô tả trang web ở đây">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="trigger-point">
+
+<header>
+
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Mẫu trang webcho phòng khám tư,văn phòng,công ty nhỏ"></a></h1>
+
+<div class="banner">
+<a href="#"><img src="images/banner1.jpg" alt=""></a>
+</div>
+
+<address>
+<div class="tel">03-0000-0000</div>
+<span class="small">Giờ làm việc: 9:00 sáng đến 7:00 tối</span>
+</address>
+
+<!-- Nút thay đổi kích thước chữ -->
+<div id="f-size">
+<p>Kích thước chữ</p>
+<ul>
+<li id="f-small"></li>
+<li id="f-large"></li>
+</ul>
+</div>
+
+</header>
+
+</div>
+<!--/#trigger-point-->
+
+<!-- Menu đóng mở -->
+<div id="menubar">
+
+<nav>
+<ul>
+<li><a href="index.html">Trang chủ<span>Home</span></a></li>
+<li><a href="info.html">Về bệnh viện<span>Information</span></a>
+	<ul>
+	<li><a href="info.html#link1">Về bệnh viện</a></li>
+	<li><a href="info.html#link2">Dành cho bệnh nhân lần đầu</a></li>
+	<li><a href="info.html#link3">Lời chào từ giám đốc</a></li>
+	</ul>
+</li>
+<li><a href="service.html">Dịch vụ khám chữa bệnh<span>Medical Service</span></a>
+	<ul>
+	<li><a href="service2.html">Khoa nội tổng quát</a></li>
+	<li><a href="service2.html">Khoa nhi</a></li>
+	<li><a href="service2.html">Khoa da liễu</a></li>
+	</ul>
+</li>
+<li><a href="staff.html">Giới thiệu nhân viên<span>Staff</span></a></li>
+<li><a href="faq.html">Các câu hỏi thường gặp<span>Faq</span></a></li>
+<li><a href="access.html">Địa chỉ<span>Access</span></a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#menubar-->
+
+<div id="contents">
+
+<main class="column">
+
+<div class="main-contents">
+
+<section>
+
+<form>
+
+<h2><span class="uline">Liên Hệ Với Chúng Tôi</span><span class="small">Contact</span></h2>
+
+<!-- Thông tin mẫu form ở đây -->
+<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
+<input type="hidden" name="mode" value="confirm">
+<table class="ta1">
+<!--<tr><td colspan="2" class="auto"><strong>Màn hình xác nhận</strong></td></tr>-->
+<!-- Nhập vào hoặc xác nhận -->
+<!--<tr><th class="tamidashi" colspan="2">Form liên hệ</th></tr>-->
+<tr>
+<th width="150">Tên</th>
+<td>
+<input type="hidden" name="item1" value="<?php echo $form["item1"];?>">
+<?php echo $form["item1"];?>
+</td>
+</tr>
+<tr>
+<th width="150">Địa chỉ email</th>
+<td>
+<input type="hidden" name="item2" value="<?php echo $form["item2"];?>">
+<?php echo $form["item2"];?>
+</td>
+</tr>
+<tr>
+<th>Nội dung liên hệ</th>
+<td>
+<input type="hidden" name="item3" value="<?php echo $form["item3"]; ?>">
+<?php echo nl2br($form["item3"]);?>
+</td>
+</tr>
+</table>
+
+<p class="c">
+<input type="submit" value="Gửi">
+&nbsp;
+<input type="button" value="Quay lại" onClick="document.form1.mode.value='reinput';document.form1.submit()">
+</p>
+
+</form>
+<!-- Thông tin mẫu form ở đây -->
+
+</section>
+
+</div>
+<!--/.main-contents-->
+
+<div class="sub-contents">
+
+<nav>
+<h3>Tiêu đề menu</h3>
+<ul class="submenu">
+<li><a href="index.html">Trang chủ</a></li>
+<li><a href="info.html">Về bệnh viện</a>
+	<ul>
+	<li><a href="info.html#link1">Về bệnh viện</a></li>
+	<li><a href="info.html#link2">Dành cho bệnh nhân lần đầu</a></li>
+	<li><a href="info.html#link3">Lời chào từ giám đốc</a></li>
+	</ul>
+</li>
+<li><a href="service.html">Dịch vụ khám chữa bệnh</a>
+	<ul>
+	<li><a href="service2.html">Khoa nội tổng quát</a></li>
+	<li><a href="service2.html">Khoa nhi</a></li>
+	<li><a href="service2.html">Khoa da liễu</a></li>
+	</ul>
+</li>
+<li><a href="staff.html">Giới thiệu nhân viên</a></li>
+<li><a href="faq.html">Các câu hỏi thường gặp</a></li>
+<li><a href="access.html">Địa chỉ</a></li>
+<li><a href="recruit.html">Thông tin tuyển dụng</a></li>
+<li><a href="contact.html">Liên hệ</a></li>
+</ul>
+</nav>
+
+</div>
+<!--/.sub-contents-->
+
+</main>
+
+</div>
+<!--/#contents-->
+
+</div>
+<!--/#container-->
+
+<div id="footer-contents">
+
+<div class="left">
+
+<h3><img src="images/logo_footer.png" alt="Phòng khám bác sỹ Bơ" class="wl"></h3>
+<p>xã Quang Minh ,huyện Lương Tài ,tỉnh Bắc Ninh<br>
+Điện thoại: 099-9999-9999<br>
+Giờ tiếp nhận: 8:00 - 18:00 từ thứ Hai đến thứ Sáu</p>
+
+<ul class="icons">
+    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+</ul>
+
+
+<h3>Giờ khám</h3>
+<table class="ta2">
+<tr>
+<th>&nbsp;</th>
+<th>Thứ Hai</th>
+<th>Thứ Ba</th>
+<th>Thứ Tư</th>
+<th>Thứ Năm</th>
+<th>Thứ Sáu</th>
+<th>Thứ Bảy</th>
+<th>Chủ Nhật</th>
+</tr>
+<tr>
+<td>Buổi sáng</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>ー</td>
+</tr>
+<tr>
+<td>Buổi chiều</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>ー</td>
+<td>ー</td>
+</tr>
+</table>
+<p class="mini">Tiếp nhận khám buổi sáng: 8:30 - 12:30 | Tiếp nhận khám buổi chiều: 14:30 - 18:30</p>
+
+</div>
+<!--/.left-->
+
+<div class="right">
+
+<h3>Truy cập</h3>
+<p><a href="https://www.google.com/search?q=c%C3%A1ch+thay+%C4%91%E1%BB%95i+b%E1%BA%A3n+%C4%91%E1%BB%93&oq=c%C3%A1ch+thay+%C4%91%E1%BB%95i+b%E1%BA%A3n+%C4%91%E1%BB%93+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIICAIQABgWGB4yCAgDEAAYFhge0gEKMTM4NjRqMGoxNagCCLACAfEF7InlBwQXoG8&sourceid=chrome&ie=UTF-8">Hướng dẫn thay đổi bản đồ Google Map</a></p>
+<div class="iframe-box">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1316.7365931996812!2d106.24451770298288!3d21.020939353594247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359f00693e42f7%3A0x36e510b35f4e92db!2sB%C6%A1%20Milk%20Tea!5e0!3m2!1svi!2sjp!4v1741700465857!5m2!1svi!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+	
+</div>
+<!--/.right-->
+
+</div>
+<!--/#footer-contents-->
+
+<div id="footermenu">
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+<ul>
+<li class="title">Tiêu đề menu</li>
+<li><a href="#">Menu mẫu Menu mẫu Menu mẫu Menu mẫu</a></li>
+<li><a href="#">Menu mẫu</a></li>
+</ul>
+</div>
+<!--/#footermenu-->
+
+<footer>
+<small>Copyright&copy; <a href="index.html">LAM </a></small>
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Thiết kế web: Bơ Milk Tea》</a></span>
+</footer>
+
+<!-- Nút quay lại đầu trang -->
+<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+
+<!-- Nút đóng mở menu (biểu tượng hamburger) -->
+<div id="menubar_hdr">
+<div class="menu-icon">
+<span></span><span></span><span></span>
+</div>
+</div>
+
+<!-- Tải jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Script thay đổi kích thước chữ -->
+<script src="js/fontSizeChanger.js"></script>
+
+<!-- Slideshow (slick) -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/slick.js"></script>
+
+<!-- Parallax (inview) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+
+<!-- Script riêng cho mẫu này -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
