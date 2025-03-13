@@ -54,15 +54,15 @@
 	<li><a href="info.html#link3">Lời chào từ giám đốc</a></li>
 	</ul>
 </li>
-<li><a href="service.html">Dịch vụ khám chữa bệnh<span>Medical Service</span></a>
+<li><a href="service.html">Dịch vụ y tế<span>Medical Service</span></a>
 	<ul>
 	<li><a href="service2.html">Khoa nội tổng quát</a></li>
 	<li><a href="service2.html">Khoa nhi</a></li>
 	<li><a href="service2.html">Khoa da liễu</a></li>
 	</ul>
 </li>
-<li><a href="staff.html">Giới thiệu nhân viên<span>Staff</span></a></li>
-<li><a href="faq.html">Các câu hỏi thường gặp<span>Faq</span></a></li>
+<li><a href="staff.html">Nhân viên<span>Staff</span></a></li>
+<li><a href="faq.html">Hỏi và đáp<span>Faq</span></a></li>
 <li><a href="access.html">Địa chỉ<span>Access</span></a></li>
 </ul>
 </nav>
@@ -75,55 +75,60 @@
 <main class="column">
 
 <div class="main-contents">
+  <!-- Form Đặt Lịch Khám Bệnh -->
+    <section class="appointment-form">
+        <h2><span class="uline">Đặt Lịch</span><span class="small">Appointment</span></h2>
 
-<section>
+        <form name="appointmentForm" enctype="multipart/form-data" method="post" action="appointment.php">
+            <input type="hidden" name="mode" value="confirm">
 
-<form>
+            <div class="form-group">
+                <label for="fullname">Họ và Tên:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
 
-<h2><span class="uline">Liên Hệ Với Chúng Tôi</span><span class="small">Contact</span></h2>
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
 
-<!-- Thông tin mẫu form ở đây -->
-<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
-<input type="hidden" name="mode" value="confirm">
-<table class="ta1">
-<!--<tr><td colspan="2" class="auto"><strong>Màn hình xác nhận</strong></td></tr>-->
-<!-- Nhập vào hoặc xác nhận -->
-<!--<tr><th class="tamidashi" colspan="2">Form liên hệ</th></tr>-->
-<tr>
-<th width="150">Tên</th>
-<td>
-<input type="hidden" name="item1" value="<?php echo $form["item1"];?>">
-<?php echo $form["item1"];?>
-</td>
-</tr>
-<tr>
-<th width="150">Địa chỉ email</th>
-<td>
-<input type="hidden" name="item2" value="<?php echo $form["item2"];?>">
-<?php echo $form["item2"];?>
-</td>
-</tr>
-<tr>
-<th>Nội dung liên hệ</th>
-<td>
-<input type="hidden" name="item3" value="<?php echo $form["item3"]; ?>">
-<?php echo nl2br($form["item3"]);?>
-</td>
-</tr>
-</table>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-<p class="c">
-<input type="submit" value="Gửi">
-&nbsp;
-<input type="button" value="Quay lại" onClick="document.form1.mode.value='reinput';document.form1.submit()">
-</p>
+            <div class="form-group">
+                <label for="date">Ngày Khám:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
 
-</form>
-<!-- Thông tin mẫu form ở đây -->
+            <div class="form-group">
+                <label for="department">Chuyên khoa:</label>
+                <select id="department" name="department" required>
+                    <option value="">Chọn chuyên khoa</option>
+                    <option value="Nội tổng quát">Nội tổng quát</option>
+                    <option value="Nhi khoa">Nhi khoa</option>
+                    <option value="Tim mạch">Tim mạch</option>
+                    <option value="Tai - Mũi - Họng">Tai - Mũi - Họng</option>
+                    <option value="Da liễu">Da liễu</option>
+                    <option value="Sản phụ khoa">Sản phụ khoa</option>
+                </select>
+            </div>
 
-</section>
+            <div class="form-group">
+                <label for="notes">Ghi chú thêm:</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Đặt Lịch">
+                <input type="button" value="Quay lại" onClick="history.back();">
+            </div>
+        </form>
+    </section>
 
 </div>
+
 <!--/.main-contents-->
 
 <div class="sub-contents">
