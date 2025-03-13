@@ -130,7 +130,7 @@ a:hover {
 
 /*トップページのコンテンツ*/
 .home #contents {
-	padding-top: calc(3vw + 40px);	/*スライドショー上のボタンが画像下に移動するので重ならないよう適当にpxを指定しています*/
+	padding-top: calc(3vw + 110px);	/*スライドショー上のボタンが画像下に移動するので重ならないよう適当にpxを指定しています*/
 }
 
 /*ヘッダー（ロゴや電話番号が入っている最上段のブロック）
@@ -1163,6 +1163,105 @@ ul.icons {
 	line-height: 60px;	/*高さ*/
 	border-radius: 50%;	/*円形にする*/
 }
+
+
+/*form contact
+---------------------------------------------------------------------------*/
+.appointment-form {
+    width: 100%; /* Đảm bảo form chiếm chiều rộng của .main-contents */
+    height: 100%; /* Đảm bảo form chiếm chiều cao của .column */
+    max-width: none; /* Loại bỏ giới hạn max-width */
+    max-height: none; /* Loại bỏ giới hạn max-height */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Thay đổi từ center thành space-between để form có thể chiếm toàn bộ chiều cao */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.appointment-form form {
+    width: 100%;
+    max-width: 600px; /* Có thể điều chỉnh tùy theo mong muốn */
+    flex-grow: 1; /* Cho phép form mở rộng để chiếm chiều cao */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Điều chỉnh cho các phần tử trong form không bị dồn lên giữa */
+}
+
+.form-group {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 15px;
+    text-align: center;
+}
+
+input[type="submit"],
+input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}
+
+input[type="button"] {
+    background-color: #6c757d;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+    .appointment-form {
+        width: 100%;
+        height: auto; /* Cho phép form có thể điều chỉnh chiều cao khi màn hình nhỏ */
+    }
+}
+
 
 
 /*その他
