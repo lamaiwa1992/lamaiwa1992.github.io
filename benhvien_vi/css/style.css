@@ -1255,26 +1255,46 @@ input[type="submit"]:active {
 }
 /* điều chỉnh nút button*/
 /* điều chỉnh nút button confirm */
+/* điều chỉnh nút button */
 .button {
-    background-color: #85af7a; /* background */
-    color: white; /* White text */
-    padding: 15px 30px; /* Padding for a larger button */
-    border: none; /* Remove borders */
-    cursor: pointer; /* Pointer/hand icon */
-    font-size: 18px; /* Increase font size */
-    font-weight: bold; /* Bold text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    background-color: #85af7a; /* Nền xanh lá */
+    color: white; /* Chữ màu trắng */
+    padding: 15px 30px; /* Đệm cho nút lớn hơn */
+    border: none; /* Bỏ viền */
+    cursor: pointer; /* Con trỏ hình bàn tay */
+    font-size: 18px; /* Tăng kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Chuyển đổi mượt mà */
+    margin: 10px; /* Khoảng cách giữa các nút */
 }
 
 .button:hover {
-    background-color: #45a049; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #45a049; /* Nền tối hơn khi hover */
+    transform: translateY(-2px); /* Nâng nhẹ khi hover */
 }
 
 .button:active {
-    background-color: #3e8e41; /* Even darker green on click */
-    transform: translateY(0); /* Reset lift on click */
+    background-color: #3e8e41; /* Nền tối hơn khi click */
+    transform: translateY(0); /* Reset nâng khi click */
+}
+
+/* căn giữa các nút */
+.c {
+    text-align: center; /* Căn giữa các nút */
+}
+
+/* điều chỉnh nút chỉnh sửa */
+.button-edit {
+    background-color: #e74c3c; /* Nền đỏ */
+}
+
+.button-edit:hover {
+    background-color: #c0392b; /* Nền đỏ tối hơn khi hover */
+}
+
+.button-edit:active {
+    background-color: #a93226; /* Nền đỏ tối hơn khi click */
 }
 /* điều chỉnh nút button confirm*/
 
