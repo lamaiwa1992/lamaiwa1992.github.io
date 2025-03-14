@@ -78,15 +78,7 @@
 
 <section>
 
-<form id="contactForm" action="finish.html" method="POST" onsubmit="return handleSubmit()">
-    <h2><span class="uline">Liên hệ</span><span class="small">Contact</span></h2>
-    <p>Trang này đã được cài đặt một mẫu form liên hệ gồm 3 mục (phiên bản thử nghiệm của form tự động) giúp bạn dễ dàng sử dụng.<br>
-    <span class="color-check">※Trang liên hệ (contact.html) là trang mẫu form. Nó không dùng cho form tự động thực tế, vui lòng lưu ý.</span></p>
-    <p><span class="color-check">Nếu sử dụng form tự động (※Vui lòng kiểm tra trước khi chỉnh sửa)</span><br>
-    Chỉ cần cài đặt email của bạn và chỉnh sửa đơn giản, bạn có thể sử dụng được.</p>
-    <p><span class="color-check">Nếu không sử dụng form tự động</span><br>
-    Vui lòng xóa 3 file "form.html", "confirm.html", "finish.html" có trong mẫu.</p>
-
+<form id="contactForm" action="confirm.html" method="POST" onsubmit="return handleSubmit()">
     <table class="ta1">
         <tr>
             <th>Họ và tên※</th>
@@ -97,16 +89,35 @@
             <td><input type="email" name="email" size="30" class="ws" required></td>
         </tr>
         <tr>
+            <th>Số điện thoại※</th>
+            <td><input type="tel" name="phoneNumber" size="30" class="ws" required></td>
+        </tr>
+        <tr>
+            <th>Ngày khám※</th>
+            <td><input type="date" name="appointmentDate" class="ws" required></td>
+        </tr>
+        <tr>
+            <th>Chuyên khoa※</th>
+            <td>
+                <select name="specialty" class="ws" required>
+                    <option value="general">Tổng quát</option>
+                    <option value="cardiology">Tim mạch</option>
+                    <option value="neurology">Thần kinh</option>
+                    <option value="orthopedics">Chỉnh hình</option>
+                    <option value="pediatrics">Nhi khoa</option>
+                    <option value="dermatology">Da liễu</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <th>Chi tiết liên hệ※</th>
             <td><textarea name="message" cols="30" rows="10" class="wl" required></textarea></td>
         </tr>
     </table>
-
     <p class="c">
         <input type="submit" value="Xác nhận nội dung">
     </p>
 </form>
-
 <script>
     function handleSubmit() {
         // Bạn có thể thực hiện các kiểm tra dữ liệu ở đây nếu cần
