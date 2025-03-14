@@ -83,15 +83,15 @@
     <table class="ta1">
         <tr>
             <th>Họ và tên※</th>
-            <td><input type="text" name="fullName" size="30" class="ws" required></td>
+            <td><input type="text" name="fullName" size="30" class="ws" placeholder="Nhập họ và tên của bạn" required></td>
         </tr>
         <tr>
-            <th>Địa chỉ email※</th>
-            <td><input type="email" name="email" size="30" class="ws" required></td>
+            <th>Địa chỉ email</th>
+            <td><input type="email" name="email" size="30" class="ws" placeholder="Nhập địa chỉ email của bạn"></td>
         </tr>
         <tr>
             <th>Số điện thoại※</th>
-            <td><input type="tel" name="phoneNumber" size="30" class="ws" required></td>
+            <td><input type="tel" name="phoneNumber" size="30" class="ws" placeholder="Nhập số điện thoại của bạn" required></td>
         </tr>
         <tr>
             <th>Ngày khám※</th>
@@ -101,6 +101,7 @@
             <th>Chuyên khoa※</th>
             <td>
                 <select name="specialty" class="ws" required>
+                    <option value="" disabled selected>Chọn chuyên khoa</option>
                     <option value="general">Tổng quát</option>
                     <option value="cardiology">Tim mạch</option>
                     <option value="neurology">Thần kinh</option>
@@ -111,19 +112,20 @@
             </td>
         </tr>
         <tr>
-            <th>Chi tiết liên hệ※</th>
-            <td><textarea name="message" cols="30" rows="10" class="wl" required></textarea></td>
+            <th>Ghi chú※</th>
+            <td><textarea name="message" cols="30" rows="10" class="wl" placeholder="Nhập ghi chú của bạn" required></textarea></td>
         </tr>
     </table>
+    <p style="color:red;">※Lưu ý: Những mục có dấu sao là mục bắt buộc phải nhập.</p>
     <p class="c">
         <input type="submit" value="Xác nhận nội dung">
     </p>
+    
 </form>
 <script>
     function handleSubmit() {
-        // Bạn có thể thực hiện các kiểm tra dữ liệu ở đây nếu cần
-        // Sau đó, trang sẽ chuyển hướng sang "finish.html"
-        window.location.href = "finish.html";
+        // trang sẽ chuyển hướng sang "confirm.html"
+        window.location.href = "confirm.html";
         return false; // Ngăn chặn hành động mặc định của form (gửi form)
     }
 </script>
