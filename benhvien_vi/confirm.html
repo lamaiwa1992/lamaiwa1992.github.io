@@ -75,58 +75,57 @@
 <main class="column">
 
 <div class="main-contents">
-  <!-- Form Đặt Lịch Khám Bệnh -->
-    <section class="appointment-form">
-        <h2><span class="uline">Đặt Lịch</span><span class="small">Appointment</span></h2>
+        <h2><span class="uline">Xác Nhận Nội Dung</span><span class="small">Confirm</span></h2>
+        <table class="ta1">
+            <tr>
+                <th>Họ và tên:</th>
+                <td id="confirmFullName"></td>
+            </tr>
+            <tr>
+                <th>Địa chỉ email:</th>
+                <td id="confirmEmail"></td>
+            </tr>
+            <tr>
+                <th>Số điện thoại:</th>
+                <td id="confirmPhoneNumber"></td>
+            </tr>
+            <tr>
+                <th>Ngày khám:</th>
+                <td id="confirmAppointmentDate"></td>
+            </tr>
+            <tr>
+                <th>Chuyên khoa:</th>
+                <td id="confirmSpecialty"></td>
+            </tr>
+            <tr>
+                <th>Ghi chú:</th>
+                <td id="confirmMessage"></td>
+            </tr>
+        </table>
+        <p class="c">
+            <button class="button" onclick="submitForm()">Xác nhận</button>
+            <button class="button" onclick="goBack()">Chỉnh sửa</button>
+        </p>
+    </div>
+    <script>
+        // Lấy dữ liệu từ URL và hiển thị trên trang xác nhận
+        document.getElementById('confirmFullName').innerText = new URLSearchParams(window.location.search).get('fullName');
+        document.getElementById('confirmEmail').innerText = new URLSearchParams(window.location.search).get('email');
+        document.getElementById('confirmPhoneNumber').innerText = new URLSearchParams(window.location.search).get('phoneNumber');
+        document.getElementById('confirmAppointmentDate').innerText = new URLSearchParams(window.location.search).get('appointmentDate');
+        document.getElementById('confirmSpecialty').innerText = new URLSearchParams(window.location.search).get('specialty');
+        document.getElementById('confirmMessage').innerText = new URLSearchParams(window.location.search).get('message');
 
-        <form name="appointmentForm" enctype="multipart/form-data" method="post" action="appointment.php">
-            <input type="hidden" name="mode" value="confirm">
+        function submitForm() {
+            // Chuyển hướng đến trang finish.html
+            window.location.href = "finish.html";
+        }
 
-            <div class="form-group">
-                <label for="fullname">Họ và Tên:</label>
-                <input type="text" id="fullname" name="fullname" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Số điện thoại:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="date">Ngày Khám:</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-
-            <div class="form-group">
-                <label for="department">Chuyên khoa:</label>
-                <select id="department" name="department" required>
-                    <option value="">Chọn chuyên khoa</option>
-                    <option value="Nội tổng quát">Nội tổng quát</option>
-                    <option value="Nhi khoa">Nhi khoa</option>
-                    <option value="Tim mạch">Tim mạch</option>
-                    <option value="Tai - Mũi - Họng">Tai - Mũi - Họng</option>
-                    <option value="Da liễu">Da liễu</option>
-                    <option value="Sản phụ khoa">Sản phụ khoa</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="notes">Ghi chú thêm:</label>
-                <textarea id="notes" name="notes"></textarea>
-            </div>
-
-            <div class="form-actions">
-                <input type="submit" value="Đặt Lịch">
-                <input type="button" value="Quay lại" onClick="history.back();">
-            </div>
-        </form>
-    </section>
-
+        function goBack() {
+            // Quay lại trang trước để chỉnh sửa
+            window.history.back();
+        }
+    </script>
 </div>
 
 <!--/.main-contents-->
