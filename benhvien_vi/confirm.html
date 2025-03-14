@@ -103,10 +103,10 @@
                 <td id="confirmMessage"></td>
             </tr>
         </table>
-        <p>
-            <button class="button" onclick="submitForm()">Xác nhận</button>
-            <button class="button" onclick="goBack()">Chỉnh sửa</button>
-        </p>
+	<p class="c">
+	    <button class="button" onclick="submitForm()">Xác nhận</button>
+	    <button class="button button-edit" onclick="goBack()">Chỉnh sửa</button>
+	</p>
     <script>
         // Lấy dữ liệu từ URL và hiển thị trên trang xác nhận
         document.getElementById('confirmFullName').innerText = new URLSearchParams(window.location.search).get('fullName');
