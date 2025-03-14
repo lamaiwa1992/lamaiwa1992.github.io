@@ -1254,6 +1254,30 @@ input[type="submit"]:active {
     transform: translateY(0); /* Reset lift on click */
 }
 /* điều chỉnh nút button*/
+/* điều chỉnh nút button confirm */
+.button {
+    background-color: #85af7a; /* background */
+    color: white; /* White text */
+    padding: 15px 30px; /* Padding for a larger button */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer/hand icon */
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.button:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    transform: translateY(0); /* Reset lift on click */
+}
+/* điều chỉnh nút button confirm*/
+
 @media (max-width: 768px) {
     .appointment-form {
         width: 100%;
