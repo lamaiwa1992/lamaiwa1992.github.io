@@ -1255,7 +1255,6 @@ input[type="submit"]:active {
 }
 /* điều chỉnh nút button*/
 /* điều chỉnh nút button confirm */
-/* điều chỉnh nút button */
 .button {
     background-color: #85af7a; /* Nền xanh lá */
     color: white; /* Chữ màu trắng */
@@ -1280,8 +1279,8 @@ input[type="submit"]:active {
 }
 
 /* căn giữa các nút */
-.c {
-    text-align: center; /* Căn giữa các nút */
+.button-container{
+    text-align: center; /* Center align the buttons */
 }
 
 /* điều chỉnh nút chỉnh sửa */
@@ -1295,7 +1294,7 @@ input[type="submit"]:active {
 
 .button-edit:active {
     background-color: #a93226; /* Nền đỏ tối hơn khi click */
-}
+
 /* điều chỉnh nút button confirm*/
 
 @media (max-width: 768px) {
