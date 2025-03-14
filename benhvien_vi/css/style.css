@@ -1062,9 +1062,11 @@ ul.icons {
 /*ta1テーブルブロック設定*/
 .ta1 {
 	table-layout: fixed;
-	border-top: 1px solid #999;	/*テーブルの一番上の線。幅、線種、色*/
+	border-top: 1px solid #679b59;	/*テーブルの一番上の線。幅、線種、色*/
+	border-right: 1px solid #679b59;
+	border-left: 1px solid #679b59;
 	width: 100%;				/*幅*/
-	margin-bottom: 1rem;			/*テーブルの下に空けるスペース*/
+	margin-bottom: 2rem;			/*テーブルの下に空けるスペース*/
 }
 
 /*tr（１行分）タグ設定*/
@@ -1143,7 +1145,7 @@ ul.icons {
 .ta-box + p,
 .ta1 + p,
 .ta2 + p {
-	margin-top: -2rem;
+	margin-top: 1rem;
 }
 
 /*PAGE TOP（↑）設定
