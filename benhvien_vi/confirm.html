@@ -103,18 +103,17 @@
                 <td id="confirmMessage"></td>
             </tr>
         </table>
-	<div class="button-container">
-            <button class="button"     <button class="button" onclick="submitForm()">Xác nhận</button>
-    	    <button class="button button-edit" onclick="goBack()">Chỉnh sửa</button>
+        <div class="button-container">
+            <button class="button" onclick="submitForm()">Xác nhận</button>
+            <button class="button button-edit" onclick="goBack()">Chỉnh sửa</button>
         </div>
     <script>
-        // Lấy dữ liệu từ URL và hiển thị trên trang xác nhận
-        document.getElementById('confirmFullName').innerText = new URLSearchParams(window.location.search).get('fullName');
-        document.getElementById('confirmEmail').innerText = new URLSearchParams(window.location.search).get('email');
-        document.getElementById('confirmPhoneNumber').innerText = new URLSearchParams(window.location.search).get('phoneNumber');
-        document.getElementById('confirmAppointmentDate').innerText = new URLSearchParams(window.location.search).get('appointmentDate');
-        document.getElementById('confirmSpecialty').innerText = new URLSearchParams(window.location.search).get('specialty');
-        document.getElementById('confirmMessage').innerText = new URLSearchParams(window.location.search).get('message');
+        document.getElementById('confirmFullName').innerText = localStorage.getItem('fullName');
+        document.getElementById('confirmEmail').innerText = localStorage.getItem('email');
+        document.getElementById('confirmPhoneNumber').innerText = localStorage.getItem('phoneNumber');
+        document.getElementById('confirmAppointmentDate').innerText = localStorage.getItem('appointmentDate');
+        document.getElementById('confirmSpecialty').innerText = localStorage.getItem('specialty');
+        document.getElementById('confirmMessage').innerText = localStorage.getItem('message');
 
         function submitForm() {
             // Chuyển hướng đến trang finish.html

@@ -98,9 +98,9 @@
             <td><input type="date" name="appointmentDate" class="ws" required></td>
         </tr>
         <tr>
-            <th>Chuyên khoa※</th>
+            <th>Chuyên khoa</th>
             <td>
-                <select name="specialty" class="ws" required>
+                <select name="specialty" class="ws">
                     <option value="" disabled selected>Chọn chuyên khoa</option>
                     <option value="general">Tổng quát</option>
                     <option value="cardiology">Tim mạch</option>
@@ -112,8 +112,8 @@
             </td>
         </tr>
         <tr>
-            <th>Ghi chú※</th>
-            <td><textarea name="message" cols="30" rows="10" class="wl" placeholder="Nhập ghi chú của bạn" required></textarea></td>
+            <th>Ghi chú</th>
+            <td><textarea name="message" cols="30" rows="10" class="wl" placeholder="Nhập ghi chú của bạn"></textarea></td>
         </tr>
     </table>
     <p style="color:red;">※Lưu ý: Những mục có dấu sao là mục bắt buộc phải nhập.</p>
@@ -124,10 +124,26 @@
 </form>
 <script>
     function handleSubmit() {
-        // trang sẽ chuyển hướng sang "confirm.html"
+        var fullName = document.querySelector('input[name="fullName"]').value;
+        var email = document.querySelector('input[name="email"]').value;
+        var phoneNumber = document.querySelector('input[name="phoneNumber"]').value;
+        var appointmentDate = document.querySelector('input[name="appointmentDate"]').value;
+        var specialty = document.querySelector('select[name="specialty"]').value;
+        var message = document.querySelector('textarea[name="message"]').value;
+
+        // Lưu thông tin vào localStorage
+        localStorage.setItem('fullName', fullName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('phoneNumber', phoneNumber);
+        localStorage.setItem('appointmentDate', appointmentDate);
+        localStorage.setItem('specialty', specialty);
+        localStorage.setItem('message', message);
+
+        // Chuyển hướng sang trang confirm.html
         window.location.href = "confirm.html";
-        return false; // Ngăn chặn hành động mặc định của form (gửi form)
+        return false; // Ngăn chặn gửi form thực tế
     }
+
 </script>
 
 </section>

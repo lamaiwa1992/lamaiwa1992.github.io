@@ -1231,35 +1231,37 @@ textarea {
     margin-top: 15px;
     text-align: center;
 }
-/* điều chỉnh nút button*/
+/* Điều chỉnh nút button submit */
 input[type="submit"] {
-    background-color: #85af7a; /* background */
-    color: white; /* White text */
-    padding: 15px 30px; /* Padding for a larger button */
-    border: none; /* Remove borders */corners */
-    cursor: pointer; /* Pointer/hand icon */
-    font-size: 18px; /* Increase font size */
-    font-weight: bold; /* Bold text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    background-color: #85af7a; /* Màu nền */
+    color: white; /* Màu chữ trắng */
+    padding: 15px 30px; /* Padding để nút lớn hơn */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc để nút mềm mại hơn */
+    cursor: pointer; /* Con trỏ hình bàn tay */
+    font-size: 18px; /* Tăng kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bóng mờ nhẹ */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Chuyển đổi mượt mà */
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #45a049; /* Nền tối hơn khi hover */
+    transform: translateY(-2px); /* Nâng nhẹ khi hover */
 }
 
 input[type="submit"]:active {
-    background-color: #3e8e41; /* Even darker green on click */
-    transform: translateY(0); /* Reset lift on click */
+    background-color: #3e8e41; /* Nền tối hơn khi click */
+    transform: translateY(0); /* Reset nâng khi click */
 }
-/* điều chỉnh nút button*/
-/* điều chỉnh nút button confirm */
+
+/* Điều chỉnh nút confirm */
 .button {
-    background-color: #85af7a; /* Nền xanh lá */
+    background-color: #85af7a; /* Màu nền xanh lá */
     color: white; /* Chữ màu trắng */
-    padding: 15px 30px; /* Đệm cho nút lớn hơn */
+    padding: 15px 30px; /* Padding để nút lớn hơn */
     border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc cho nút */
     cursor: pointer; /* Con trỏ hình bàn tay */
     font-size: 18px; /* Tăng kích thước chữ */
     font-weight: bold; /* Chữ đậm */
@@ -1278,14 +1280,15 @@ input[type="submit"]:active {
     transform: translateY(0); /* Reset nâng khi click */
 }
 
-/* căn giữa các nút */
-.button-container{
-    text-align: center; /* Center align the buttons */
+/* Căn giữa các nút */
+.button-container {
+    text-align: center; /* Căn giữa các nút */
 }
 
-/* điều chỉnh nút chỉnh sửa */
+/* Điều chỉnh nút chỉnh sửa */
 .button-edit {
     background-color: #e74c3c; /* Nền đỏ */
+    border-radius: 5px; /* Bo góc cho nút */
 }
 
 .button-edit:hover {
@@ -1294,8 +1297,7 @@ input[type="submit"]:active {
 
 .button-edit:active {
     background-color: #a93226; /* Nền đỏ tối hơn khi click */
-
-/* điều chỉnh nút button confirm*/
+}
 
 @media (max-width: 768px) {
     .appointment-form {
