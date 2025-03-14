@@ -770,54 +770,56 @@
   bản trình chiếu slide             
  ---------------------------------------------------------------------------------------*/
  
+.product-gallery {
+    display: flex; /* Sử dụng Flexbox để xếp các phần tử theo chiều ngang */
+    flex-wrap: wrap; /* Cho phép các sản phẩm xuống hàng khi hết không gian */
+    gap: 10px; /* Khoảng cách giữa các sản phẩm */
+    justify-content: center; /* Căn giữa các sản phẩm theo chiều ngang */
+}
+
+.product {
+    width: 150px; /* Đặt chiều rộng cho mỗi sản phẩm */
+    overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài */
+    text-align: center; /* Căn giữa văn bản */
+    border: 1px solid #ddd; /* Thêm viền cho sản phẩm */
+    box-sizing: border-box; /* Đảm bảo padding và border được bao gồm trong width và height */
+    padding: 10px; /* Thêm khoảng cách bên trong sản phẩm */
+}
+
+.product img {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ diện tích của phần tử */
+    height: 150px; /* Đảm bảo ảnh chiếm toàn bộ diện tích của phần tử */
+    object-fit: contain; /* Đảm bảo ảnh không bị cắt, giữ tỷ lệ gốc của ảnh */
+}
+
+.product-info {
+    margin-top: 10px; /* Khoảng cách giữa ảnh và thông tin sản phẩm */
+}
+
+@media (max-width: 1200px) {
+    .product {
+        flex: 1 1 25%; /* 4 products per row */
+    }
+}
+
+@media (max-width: 992px) {
+    .product {
+        flex: 1 1 33.33%; /* 3 products per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 50%; /* 2 products per row */
+    }
+}
+
+@media (max-width: 576px) {
+    .product {
+        flex: 1 1 100%; /* 1 product per row */
+    }
+}
+ /*--------------------------------------------------------------------------------------
+  bản trình chiếu slide             
+ ---------------------------------------------------------------------------------------*/
  
- 
- .product-gallery {
-     display: flex; /* Sử dụng Flexbox để xếp các phần tử theo chiều ngang */
-     flex-wrap: wrap; /* Cho phép các sản phẩm xuống hàng khi hết không gian */
-     gap: 10px; /* Khoảng cách giữa các sản phẩm */
-     justify-content: center; /* Căn giữa các sản phẩm theo chiều ngang */
- }
- 
- .product {
-     width: 150px; /* Đặt chiều rộng cho mỗi sản phẩm */
-     overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài */
-     text-align: center; /* Căn giữa văn bản */
-     border: 1px solid #ddd; /* Thêm viền cho sản phẩm */
-     box-sizing: border-box; /* Đảm bảo padding và border được bao gồm trong width và height */
-     padding: 10px; /* Thêm khoảng cách bên trong sản phẩm */
- }
- 
- .product img {
-     width: 100%; /* Đảm bảo ảnh chiếm toàn bộ diện tích của phần tử */
-     height: 150px; /* Đảm bảo ảnh chiếm toàn bộ diện tích của phần tử */
-     object-fit: contain; /* Đảm bảo ảnh không bị cắt, giữ tỷ lệ gốc của ảnh */
- }
- 
- .product-info {
-     margin-top: 10px; /* Khoảng cách giữa ảnh và thông tin sản phẩm */
- }
- 
- @media (max-width: 1200px) {
-     .product {
-         flex: 1 1 25%; /* 4 products per row */
-     }
- }
- 
- @media (max-width: 992px) {
-     .product {
-         flex: 1 1 33.33%; /* 3 products per row */
-     }
- }
- 
- @media (max-width: 768px) {
-     .product {
-         flex: 1 1 50%; /* 2 products per row */
-     }
- }
- 
- @media (max-width: 576px) {
-     .product {
-         flex: 1 1 100%; /* 1 product per row */
-     }
- }
