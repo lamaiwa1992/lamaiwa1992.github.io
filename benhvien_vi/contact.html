@@ -47,22 +47,22 @@
 <nav>
 <ul>
 <li><a href="index.html">Trang chủ<span>Home</span></a></li>
-<li><a href="info.html">Giới thiệu bệnh viện<span>Information</span></a>
+<li><a href="info.html">Thông tin<span>Information</span></a>
 	<ul>
 	<li><a href="info.html#link1">Về bệnh viện</a></li>
 	<li><a href="info.html#link2">Dành cho bệnh nhân lần đầu</a></li>
 	<li><a href="info.html#link3">Lời chào từ giám đốc</a></li>
 	</ul>
 </li>
-<li><a href="service.html">Dịch vụ khám chữa bệnh<span>Medical Service</span></a>
+<li><a href="service.html">Dịch vụ<span>Medical Service</span></a>
 	<ul>
 	<li><a href="service2.html">Khoa nội tổng quát</a></li>
 	<li><a href="service2.html">Khoa nhi</a></li>
 	<li><a href="service2.html">Khoa da liễu</a></li>
 	</ul>
 </li>
-<li><a href="staff.html">Giới thiệu nhân viên<span>Staff</span></a></li>
-<li><a href="faq.html">Các câu hỏi thường gặp<span>Faq</span></a></li>
+<li><a href="staff.html">Nhân viên<span>Staff</span></a></li>
+<li><a href="faq.html">Hỏi và Đáp<span>Faq</span></a></li>
 <li><a href="access.html">Địa chỉ<span>Access</span></a></li>
 </ul>
 </nav>
@@ -78,36 +78,43 @@
 
 <section>
 
-<form>
+<form id="contactForm" action="finish.html" method="POST" onsubmit="return handleSubmit()">
+    <h2><span class="uline">Liên hệ</span><span class="small">Contact</span></h2>
+    <p>Trang này đã được cài đặt một mẫu form liên hệ gồm 3 mục (phiên bản thử nghiệm của form tự động) giúp bạn dễ dàng sử dụng.<br>
+    <span class="color-check">※Trang liên hệ (contact.html) là trang mẫu form. Nó không dùng cho form tự động thực tế, vui lòng lưu ý.</span></p>
+    <p><span class="color-check">Nếu sử dụng form tự động (※Vui lòng kiểm tra trước khi chỉnh sửa)</span><br>
+    Chỉ cần cài đặt email của bạn và chỉnh sửa đơn giản, bạn có thể sử dụng được.</p>
+    <p><span class="color-check">Nếu không sử dụng form tự động</span><br>
+    Vui lòng xóa 3 file "form.html", "confirm.html", "finish.html" có trong mẫu.</p>
 
-<h2><span class="uline">Liên hệ</span><span class="small">Contact</span></h2>
-<p>Trang này đã được cài đặt một mẫu form liên hệ gồm 3 mục (phiên bản thử nghiệm của form tự động) giúp bạn dễ dàng sử dụng.<br>
-<span class="color-check">※Trang liên hệ (contact.html) là trang mẫu form. Nó không dùng cho form tự động thực tế, vui lòng lưu ý.</span></p>
-<p><span class="color-check">Nếu sử dụng form tự động (※Vui lòng kiểm tra trước khi chỉnh sửa)</span><br>
-Chỉ cần cài đặt email của bạn và chỉnh sửa đơn giản, bạn có thể sử dụng được. </p>
-<p><span class="color-check">Nếu không sử dụng form tự động</span><br>
-Vui lòng xóa 3 file "form.html", "confirm.html", "finish.html" có trong mẫu.</p>
+    <table class="ta1">
+        <tr>
+            <th>Họ và tên※</th>
+            <td><input type="text" name="fullName" size="30" class="ws" required></td>
+        </tr>
+        <tr>
+            <th>Địa chỉ email※</th>
+            <td><input type="email" name="email" size="30" class="ws" required></td>
+        </tr>
+        <tr>
+            <th>Chi tiết liên hệ※</th>
+            <td><textarea name="message" cols="30" rows="10" class="wl" required></textarea></td>
+        </tr>
+    </table>
 
-<table class="ta1">
-<tr>
-<th>Họ và tên※</th>
-<td><input type="text" name="Họ và tên" size="30" class="ws"></td>
-</tr>
-<tr>
-<th>Địa chỉ email※</th>
-<td><input type="text" name="Email" size="30" class="ws"></td>
-</tr>
-<tr>
-<th>Chi tiết liên hệ※</th>
-<td><textarea name="Chi tiết liên hệ" cols="30" rows="10" class="wl"></textarea></td>
-</tr>
-</table>
-
-<p class="c">
-<input type="submit" value="Xác nhận nội dung">
-</p>
-
+    <p class="c">
+        <input type="submit" value="Xác nhận nội dung">
+    </p>
 </form>
+
+<script>
+    function handleSubmit() {
+        // Bạn có thể thực hiện các kiểm tra dữ liệu ở đây nếu cần
+        // Sau đó, trang sẽ chuyển hướng sang "finish.html"
+        window.location.href = "finish.html";
+        return false; // Ngăn chặn hành động mặc định của form (gửi form)
+    }
+</script>
 
 </section>
 
