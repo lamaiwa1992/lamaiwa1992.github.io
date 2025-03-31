@@ -1,0 +1,220 @@
+/* Tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://bomilktea.store/ANH/2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container chính */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+/* Tab */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tablink {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.tablink:hover {
+    background-color: #45a049;
+}
+
+/* Tab nội dung */
+.tabcontent {
+    display: none;
+}
+
+/* Menu item */
+.menu-item {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.menu-item img {
+    width: 100px;
+    height: 150px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Hiển thị thông tin đơn hàng */
+#orderSummary {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Form */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Hiển thị thông tin đơn hàng */
+#orderSummary {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#orderSummary h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+#orderSummary p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Phương thức thanh toán */
+#paymentMethod {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+#bankDetails {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    display: none;
+}
+/* Màu sắc cho các tab khi chọn và không chọn */
+.tablink {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.tablink.active {
+    background-color: #4CAF50; /* Màu xanh lá cho tab được chọn */
+    color: white;
+}
+
+.tablink:hover {
+    background-color: #ddd; /* Màu khi hover */
+}
+
+/* Màu sắc cho nút "Xóa tất cả lựa chọn" */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Nút "Xóa tất cả lựa chọn" có màu đỏ */
+button[onclick="resetSelections()"] {
+    background-color: red;
+    color: white;
+}
+
+/* Màu sắc cho nút "Chỉnh sửa" và "Gửi" trên trang đặt món */
+button[onclick="editOrder()"] {
+    background-color: orange; /* Màu cho nút chỉnh sửa */
+    color: white;
+}
+
+button[onclick="submitOrder()"]:not([disabled]) {
+    background-color: green; /* Màu cho nút gửi */
+    color: white;
+}
+
+/* Nút "Gửi" bị disabled */
+button[disabled] {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Món - BOMILKTEA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thông Tin Đặt Món</h1>
+        <form id="orderForm">
+            <label for="name">Tên khách hàng:</label>
+            <input type="text" id="name" required>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" required>
+
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" required>
+
+            <label for="paymentMethod">Phương thức thanh toán:</label>
+            <select id="paymentMethod" required>
+                <option value="cod">Thanh toán khi nhận hàng</option>
+                <option value="bankTransfer">Chuyển khoản ngân hàng</option>
+            </select>
+
+            <div id="bankDetails" style="display:none;">
+                <p>Thông tin tài khoản ngân hàng của chúng tôi...</p>
+            </div>
+
+            <div id="orderSummary" style="display:none;">
+                <h2>Thông tin đơn hàng</h2>
+                <div id="orderDetails"></div>
+                <button type="button" onclick="submitOrderFinal()">Gửi Đơn Hàng</button>
+                <button type="button" onclick="editOrder()">Chỉnh Sửa</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/min.js"></script>
+    <script>
+        // Lấy thông tin đơn hàng từ localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectedItems = JSON.parse(localStorage.getItem("selectedItems"));
+
+            if (selectedItems && selectedItems.length > 0) {
+                let orderDetailsHtml = "";
+                selectedItems.forEach(item => {
+                    orderDetailsHtml += `
+                        <p>${item.name} - ${item.quantity} x ${item.price} VNĐ</p>
+                    `;
+                });
+
+                const totalPrice = selectedItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+                orderDetailsHtml += `<p><strong>Tổng cộng: ${totalPrice} VNĐ</strong></p>`;
+
+                document.getElementById("orderDetails").innerHTML = orderDetailsHtml;
+                document.getElementById("orderSummary").style.display = "block";
+            } else {
+                alert("Chưa có món nào được chọn!");
+                window.location.href = "chonmon.html";
+            }
+
+            // Hiển thị/ẩn thông tin ngân hàng khi chọn phương thức thanh toán
+            const paymentMethodSelect = document.getElementById("paymentMethod");
+            paymentMethodSelect.addEventListener("change", function() {
+                if (this.value === "bankTransfer") {
+                    document.getElementById("bankDetails").style.display = "block";
+                } else {
+                    document.getElementById("bankDetails").style.display = "none";
+                }
+            });
+        });
+
+        // Hàm gửi đơn hàng
+        function submitOrderFinal() {
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const address = document.getElementById("address").value;
+            const paymentMethod = document.getElementById("paymentMethod").value;
+
+            if (!name || !phone || !address) {
+                alert("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            const selectedItems = JSON.parse(localStorage.getItem("selectedItems"));
+            const order = {
+                customerName: name,
+                phone: phone,
+                address: address,
+                paymentMethod: paymentMethod,
+                items: selectedItems
+            };
+
+            // Gửi dữ liệu đơn hàng, có thể lưu vào server hoặc gửi email
+            console.log("Đơn hàng đã được gửi:", order);
+
+            // Xóa dữ liệu đơn hàng khỏi localStorage sau khi gửi
+            localStorage.removeItem("selectedItems");
+
+            // Chuyển hướng sang trang cảm ơn hoặc trang khác
+            alert("Đơn hàng của bạn đã được gửi thành công!");
+            window.location.href = "thankyou.html"; // Chuyển đến trang cảm ơn hoặc trang khác
+        }
+
+        // Hàm chỉnh sửa đơn hàng
+        function editOrder() {
+            // Chuyển hướng về trang chọn món để người dùng chỉnh sửa đơn hàng
+            window.location.href = "chonmon.html";
+        }
+    </script>
+</body>
+</html>
