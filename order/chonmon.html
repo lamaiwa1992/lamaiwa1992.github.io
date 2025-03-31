@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Món - BOMILKTEA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chọn Món</h1>
+
+        <!-- Tab chọn loại món -->
+        <div class="tabs">
+            <button class="tablink" onclick="openCategory(event, 'coffee')">Cà Phê</button>
+            <button class="tablink" onclick="openCategory(event, 'milktea')">Trà Sữa</button>
+            <button class="tablink" onclick="openCategory(event, 'lemontea')">Trà Chanh</button>
+            <button class="tablink" onclick="openCategory(event, 'snacks')">Đồ Ăn Vặt</button>
+        </div>
+
+        <!-- Nội dung từng tab -->
+        <div id="coffee" class="tabcontent">
+            <div id="menu"></div>
+        </div>
+        <div id="milktea" class="tabcontent">
+            <div id="menu"></div>
+        </div>
+        <div id="lemontea" class="tabcontent">
+            <div id="menu"></div>
+        </div>
+        <div id="snacks" class="tabcontent">
+            <div id="menu"></div>
+        </div>
+
+        <!-- Nút xóa tất cả lựa chọn -->
+        <button onclick="resetSelections()">Xóa tất cả lựa chọn</button>
+
+        <!-- Nút xác nhận đơn hàng -->
+        <button onclick="goToOrder()">Xác nhận đơn hàng</button>
+    </div>
+
+    <script src="js/menu.js"></script>
+    <script>
+        // Mở tab mặc định khi load trang
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mở tab cà phê mặc định
+            document.querySelector(".tablink").click();
+        });
+    </script>
+</body>
+</html>
