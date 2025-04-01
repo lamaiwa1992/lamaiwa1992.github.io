@@ -159,13 +159,23 @@ button:hover {
     border-radius: 5px;
 }
 
+/* Tab đang được chọn sẽ có màu xanh lá */
 .tablink.active {
     background-color: #4CAF50; /* Màu xanh lá cho tab được chọn */
     color: white;
 }
 
+/* Màu sắc khi hover (di chuột lên tab) */
 .tablink:hover {
-    background-color: #ddd; /* Màu khi hover */
+    background-color: #4CAF50; /* Màu khi hover */
+}
+
+/* Tab trên các thiết bị di động */
+@media (max-width: 767px) {
+    .tablink {
+        font-size: 14px;  /* Giảm font size khi trên di động */
+        padding: 8px;     /* Điều chỉnh kích thước padding khi trên di động */
+    }
 }
 
 /* Màu sắc cho nút "Xóa tất cả lựa chọn" */
