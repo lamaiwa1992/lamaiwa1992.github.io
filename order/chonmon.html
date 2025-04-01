@@ -31,8 +31,11 @@
         <div id="snacks" class="tabcontent">
             <div id="menu-snacks"></div>
         </div>
-
-
+        <!-- Thêm phần tử để hiển thị thông tin đơn hàng -->
+        <div id="orderDetails" style="display: none;">
+            <h3>Thông tin đơn hàng</h3>
+            <div id="orderSummary"></div>
+        </div>
         <!-- Nút xóa tất cả lựa chọn -->
         <button onclick="resetSelections()">Xóa tất cả lựa chọn</button>
 
@@ -40,7 +43,7 @@
         <button onclick="goToOrder()">Xác nhận đơn hàng</button>
     </div>
 
-    <script src="js/Menu.js"></script>
+    <script src="js/menu.js"></script>
     <script>
         // Mở tab mặc định khi load trang
         document.addEventListener("DOMContentLoaded", function() {
