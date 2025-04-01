@@ -19,18 +19,20 @@ const items = {
     ],
     lemontea: [
         { id: 15, name: "Trà Chanh", price: 35000, image: "images/5.png" },
-        { id: 15, name: "Trà Chanh", price: 35000, image: "images/8.png" }
+        { id: 16, name: "Trà Chanh", price: 35000, image: "images/8.png" }
     ],
     snacks: [
-        { id: 16, name: "Bánh Mì", price: 15000, image: "images/6.png" },
-        { id: 17, name: "Khoai Tây Chiên", price: 20000, image: "images/7.png" }
+        { id: 17, name: "Bánh Mì", price: 15000, image: "images/6.png" },
+        { id: 18, name: "Khoai Tây Chiên", price: 20000, image: "images/7.png" }
     ]
 };
+// Lưu trữ số lượng món đã chọn cho từng món trong từng danh mục
+let selectedQuantities = {};
 
 // Hàm render menu
 function renderMenu(category) {
     const menuContainer = document.getElementById(`menu-${category}`);
-    
+
     if (!menuContainer) {
         console.error(`❌ Lỗi: Không tìm thấy menu container cho danh mục ${category}`);
         return;
@@ -47,25 +49,68 @@ function renderMenu(category) {
         const itemDiv = document.createElement("div");
         itemDiv.classList.add("menu-item");
 
+        // Kiểm tra số lượng đã chọn trước đó và gán giá trị cho input
+        const quantity = selectedQuantities[item.id] || 0;
+
         itemDiv.innerHTML = `
             <img src="${item.image}" alt="${item.name}" onerror="this.src='images/default.png'">
             <h3>${item.name}</h3>
             <p>Giá: ${item.price} VNĐ</p>
-            <input type="number" id="qty-${item.id}" min="0" value="0">
+            <input type="number" id="qty-${item.id}" min="0" value="${quantity}">
         `;
+
+        // Thêm sự kiện onchange cho input số lượng
+        const qtyInput = itemDiv.querySelector(`#qty-${item.id}`);
+        qtyInput.addEventListener("change", function() {
+            // Lưu số lượng vào đối tượng selectedQuantities khi người dùng thay đổi số lượng
+            selectedQuantities[item.id] = parseInt(qtyInput.value) || 0;
+            updateOrderSummary();  // Gọi hàm cập nhật đơn hàng khi số lượng thay đổi
+        });
 
         menuContainer.appendChild(itemDiv);
     });
+}
 
-    // Kiểm tra input có được tạo đúng không
-    setTimeout(() => {
+// Hàm cập nhật thông tin đơn hàng
+function updateOrderSummary() {
+    const selectedItems = [];
+    let totalPrice = 0;
+
+    // Lấy tất cả các lựa chọn món từ các tab
+    Object.keys(items).forEach(category => {
         items[category].forEach(item => {
-            const qtyInput = document.getElementById(`qty-${item.id}`);
-            if (!qtyInput) {
-                console.error(`❌ Lỗi: Không tìm thấy input số lượng cho món ${item.name} (ID: ${item.id})`);
+            const qty = selectedQuantities[item.id] || 0;
+
+            if (qty > 0) {
+                const itemTotalPrice = item.price * qty;
+                selectedItems.push({ id: item.id, name: item.name, price: item.price, quantity: qty, total: itemTotalPrice });
+                totalPrice += itemTotalPrice;
             }
         });
-    }, 100);
+    });
+
+    // Cập nhật nội dung của #orderSummary
+    const orderSummary = document.getElementById("orderSummary");
+    orderSummary.innerHTML = ""; // Xóa nội dung cũ
+
+    if (selectedItems.length > 0) {
+        selectedItems.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.innerHTML = `${item.name} - ${item.quantity} x ${item.price} VNĐ = ${item.total} VNĐ`;
+            orderSummary.appendChild(itemDiv);
+        });
+
+        // Hiển thị tổng tiền
+        const totalDiv = document.createElement("div");
+        totalDiv.innerHTML = `<strong>Tổng cộng: ${totalPrice} VNĐ</strong>`;
+        orderSummary.appendChild(totalDiv);
+
+        // Hiển thị thông tin đơn hàng
+        document.getElementById("orderDetails").style.display = "block";
+    } else {
+        // Nếu không có món nào được chọn, ẩn thông tin đơn hàng
+        document.getElementById("orderDetails").style.display = "none";
+    }
 }
 
 // Hàm mở tab khi nhấn
@@ -90,20 +135,95 @@ function openCategory(evt, categoryName) {
     // Render menu cho danh mục tương ứng
     renderMenu(categoryName);
 }
+
+// Hàm reset tất cả lựa chọn
 function resetSelections() {
-    // Lấy tất cả các input số lượng và đặt về 0
-    document.querySelectorAll("input[type='number']").forEach(input => {
-        input.value = 0;
-    });
+    // Sử dụng setTimeout để đảm bảo rằng các hành động khác diễn ra sau khi alert đóng
+    setTimeout(() => {
+        // Lấy tất cả các input số lượng và đặt về 0
+        document.querySelectorAll("input[type='number']").forEach(input => {
+            input.value = 0;
+        });
 
-    // Xóa danh sách món đã chọn (nếu có sử dụng biến selectedItems)
-    if (typeof selectedItems !== "undefined") {
-        selectedItems.length = 0;
-    }
+        // Xóa danh sách món đã chọn (nếu có sử dụng biến selectedItems)
+        if (typeof selectedItems !== "undefined") {
+            selectedItems.length = 0;
+        }
+        // Hiển thị alert trước
+        alert("Đã xóa tất cả lựa chọn!");
+        // Sau khi ấn OK trong alert, tải lại trang hiện tại
+        location.reload();
+        // Ẩn phần orderSummary
+        const orderSummary = document.getElementById("orderSummary");
+        if (orderSummary) {
+            orderSummary.style.display = "none";  // Ẩn phần orderSummary
+        }
 
-    alert("Đã xóa tất cả lựa chọn!");
+    }, 0); // Độ trễ 0 sẽ giúp mã chạy ngay sau khi alert đóng
 }
 
+
+// Hàm cập nhật thông tin đơn hàng
+function updateOrderSummary() {
+    const selectedItems = [];
+    let totalPrice = 0;
+
+   // Lấy các lựa chọn món có số lượng lớn hơn 0
+Object.keys(items).forEach(category => {
+    items[category].forEach(item => {
+        const qtyInput = document.getElementById(`qty-${item.id}`);
+        
+        // Kiểm tra xem input có tồn tại không trước khi truy cập
+        if (qtyInput) {
+            const qty = parseInt(qtyInput.value);
+
+            // Kiểm tra nếu số lượng lớn hơn 0, thì mới thêm vào danh sách
+            if (qty > 0) {
+                const itemTotalPrice = item.price * qty;
+                selectedItems.push({ 
+                    id: item.id, 
+                    name: item.name, 
+                    price: item.price, 
+                    quantity: qty, 
+                    total: itemTotalPrice 
+                });
+                totalPrice += itemTotalPrice;
+            }
+        } 
+    });
+});
+
+
+    // Cập nhật nội dung của #orderSummary
+    const orderSummary = document.getElementById("orderSummary");
+    orderSummary.innerHTML = ""; // Xóa nội dung cũ
+
+    if (selectedItems.length > 0) {
+        selectedItems.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.innerHTML = `${item.name} - ${item.quantity} x ${item.price} VNĐ = ${item.total} VNĐ`;
+            orderSummary.appendChild(itemDiv);
+        });
+
+        // Hiển thị tổng tiền
+        const totalDiv = document.createElement("div");
+        totalDiv.innerHTML = `<strong>Tổng cộng: ${totalPrice} VNĐ</strong>`;
+        orderSummary.appendChild(totalDiv);
+
+        // Hiển thị thông tin đơn hàng
+        document.getElementById("orderDetails").style.display = "block";
+    } else {
+        // Nếu không có món nào được chọn, ẩn thông tin đơn hàng
+        document.getElementById("orderDetails").style.display = "none";
+    }
+}
+
+
+// Hàm cập nhật số lượng món
+function updateQuantity(itemId) {
+    const qty = parseInt(document.getElementById(`qty-${itemId}`).value);
+    updateOrderSummary();
+}
 // Hàm xác nhận đơn hàng
 function goToOrder() {
     const selectedItems = [];
@@ -159,6 +279,28 @@ function goToOrder() {
     window.location.href = "datmon.html";
 }
 
+// Hàm mở tab khi nhấn
+function openCategory(evt, categoryName) {
+    // Ẩn tất cả các tab nội dung
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    const tablinks = document.getElementsByClassName("tablink");
+
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Xóa trạng thái active của các tab
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    // Hiển thị nội dung tab hiện tại và đánh dấu active
+    document.getElementById(categoryName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+
+    // Render menu cho danh mục tương ứng
+    renderMenu(categoryName);
+}
 
 // Mở tab mặc định khi trang được tải
 document.addEventListener("DOMContentLoaded", function() {
