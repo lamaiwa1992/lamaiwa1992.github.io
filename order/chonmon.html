@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chọn Món - BOMILKTEA</title>
-    <!-- Chỉnh sửa đường dẫn CSS -->
-    <link rel="stylesheet" href="https://bomilktea.store/order/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
@@ -21,17 +20,18 @@
 
         <!-- Nội dung từng tab -->
         <div id="coffee" class="tabcontent">
-            <div id="menu"></div>
+            <div id="menu-coffee"></div>
         </div>
         <div id="milktea" class="tabcontent">
-            <div id="menu"></div>
+            <div id="menu-milktea"></div>
         </div>
         <div id="lemontea" class="tabcontent">
-            <div id="menu"></div>
+            <div id="menu-lemontea"></div>
         </div>
         <div id="snacks" class="tabcontent">
-            <div id="menu"></div>
+            <div id="menu-snacks"></div>
         </div>
+
 
         <!-- Nút xóa tất cả lựa chọn -->
         <button onclick="resetSelections()">Xóa tất cả lựa chọn</button>
@@ -40,8 +40,7 @@
         <button onclick="goToOrder()">Xác nhận đơn hàng</button>
     </div>
 
-    <!-- Chỉnh sửa đường dẫn JavaScript -->
-    <script src="https://bomilktea.store/order/js/Menu.js"></script>
+    <script src="js/menu.js"></script>
     <script>
         // Mở tab mặc định khi load trang
         document.addEventListener("DOMContentLoaded", function() {
