@@ -63,20 +63,6 @@ h1 {
     height: 150px;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
 /* Hiển thị thông tin đơn hàng */
 #orderSummary {
     background-color: #e0f7fa;
@@ -160,6 +146,7 @@ button:hover {
     border-radius: 8px;
     display: none;
 }
+
 /* Màu sắc cho các tab khi chọn và không chọn */
 .tablink {
     background-color: #f1f1f1;
@@ -217,4 +204,79 @@ button[disabled] {
     background-color: #ccc;
     color: #888;
     cursor: not-allowed;
+}
+
+/* 🚀 Responsive Design */
+
+/* ✅ Điện thoại di động */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-item img {
+        width: 80px;
+        height: 120px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 14px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tablink {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+}
+
+/* ✅ Tablet (từ 600px đến 1024px) */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+
+    .menu-item {
+        width: 45%;
+    }
+
+    .tabs {
+        flex-direction: row;
+    }
+
+    .tablink {
+        width: auto;
+        padding: 12px;
+    }
+}
+
+/* ✅ Máy tính (trên 1024px) */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 50%;
+    }
+
+    .menu-item {
+        width: 30%;
+    }
+
+    .tabs {
+        justify-content: space-between;
+    }
 }
