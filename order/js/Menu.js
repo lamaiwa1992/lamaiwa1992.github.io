@@ -53,11 +53,16 @@ function renderMenu(category) {
         const quantity = selectedQuantities[item.id] || 0;
 
         itemDiv.innerHTML = `
+        <div class="product-container">
             <img src="${item.image}" alt="${item.name}" onerror="this.src='images/default.png'">
             <h3>${item.name}</h3>
             <p>Giá: ${item.price} VNĐ</p>
-            <input type="number" id="qty-${item.id}" min="0" value="${quantity}">
-        `;
+            <div class="quantity-container">
+                <p>SL:</p>
+                <input type="number" id="qty-${item.id}" min="0" value="${quantity}">
+            </div>
+        </div>
+    `;    
 
         // Thêm sự kiện onchange cho input số lượng
         const qtyInput = itemDiv.querySelector(`#qty-${item.id}`);
@@ -297,13 +302,19 @@ function openCategory(evt, categoryName) {
     // Hiển thị nội dung tab hiện tại và đánh dấu active
     document.getElementById(categoryName).style.display = "block";
     evt.currentTarget.classList.add("active");
-
+    // Đóng thanh menu sau khi chọn mục
+    const navLinks = document.querySelector('.tabs');
+    navLinks.classList.remove('active');  // Thu gọn menu khi chọn một mục
     // Render menu cho danh mục tương ứng
     renderMenu(categoryName);
 }
-
 // Mở tab mặc định khi trang được tải
 document.addEventListener("DOMContentLoaded", function() {
     // Mở tab cà phê mặc định
     document.querySelector(".tablink").click();
 });
+// JavaScript để mở/đóng thanh menu khi nhấn hamburger
+function toggleMenu() {
+    const navLinks = document.querySelector('.tabs');
+    navLinks.classList.toggle('active');  // Thêm hoặc bỏ class 'active' khi nhấn hamburger
+}

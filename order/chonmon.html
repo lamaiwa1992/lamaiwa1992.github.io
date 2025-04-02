@@ -10,27 +10,59 @@
     <div class="container">
         <h1>Chọn Món</h1>
 
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776; DANH MỤC</div>
+
         <!-- Tab chọn loại món -->
         <div class="tabs">
-            <button class="tablink" onclick="openCategory(event, 'coffee')">Cà Phê</button>
+            <button class="tablink" onclick="openCategory(event, 'hot')">Hot Chào Hè</button>
+            <button class="tablink" onclick="openCategory(event, 'new')">New</button>
             <button class="tablink" onclick="openCategory(event, 'milktea')">Trà Sữa</button>
-            <button class="tablink" onclick="openCategory(event, 'lemontea')">Trà Chanh</button>
+            <button class="tablink" onclick="openCategory(event, 'tea')">Trà</button>
+            <button class="tablink" onclick="openCategory(event, 'coffee')">Cà Phê</button>
+            <button class="tablink" onclick="openCategory(event, 'iced')">Đá Xay</button>
+            <button class="tablink" onclick="openCategory(event, 'freshMilk')">Sữa Tươi</button>
+            <button class="tablink" onclick="openCategory(event, 'yogurt')">Sữa Chua</button>
+            <button class="tablink" onclick="openCategory(event, 'smoothie')">Sinh Tố</button>
+            <button class="tablink" onclick="openCategory(event, 'topping')">Topping</button>
             <button class="tablink" onclick="openCategory(event, 'snacks')">Đồ Ăn Vặt</button>
         </div>
 
         <!-- Nội dung từng tab -->
-        <div id="coffee" class="tabcontent">
-            <div id="menu-coffee"></div>
+        <div id="hot" class="tabcontent">
+            <div id="menu-hot"></div>
+        </div>
+        <div id="new" class="tabcontent">
+            <div id="menu-new"></div>
         </div>
         <div id="milktea" class="tabcontent">
             <div id="menu-milktea"></div>
         </div>
-        <div id="lemontea" class="tabcontent">
-            <div id="menu-lemontea"></div>
+        <div id="tea" class="tabcontent">
+            <div id="menu-tea"></div>
+        </div>
+        <div id="coffee" class="tabcontent">
+            <div id="menu-coffee"></div>
+        </div>
+        <div id="iced" class="tabcontent">
+            <div id="menu-iced"></div>
+        </div>
+        <div id="freshMilk" class="tabcontent">
+            <div id="menu-freshMilk"></div>
+        </div>
+        <div id="yogurt" class="tabcontent">
+            <div id="menu-yogurt"></div>
+        </div>
+        <div id="smoothie" class="tabcontent">
+            <div id="menu-smoothie"></div>
+        </div>
+        <div id="topping" class="tabcontent">
+            <div id="menu-topping"></div>
         </div>
         <div id="snacks" class="tabcontent">
             <div id="menu-snacks"></div>
         </div>
+
         <!-- Thêm phần tử để hiển thị thông tin đơn hàng -->
         <div id="orderDetails" style="display: none;">
             <h3>Thông tin đơn hàng</h3>
@@ -44,12 +76,5 @@
     </div>
 
     <script src="js/Menu.js"></script>
-    <script>
-        // Mở tab mặc định khi load trang
-        document.addEventListener("DOMContentLoaded", function() {
-            // Mở tab cà phê mặc định
-            document.querySelector(".tablink").click();
-        });
-    </script>
 </body>
 </html>

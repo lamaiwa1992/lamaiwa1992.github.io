@@ -24,6 +24,7 @@ body {
 h1 {
     text-align: center;
     color: #4CAF50;
+    margin-bottom: 20px;
 }
 
 /* Tab */
@@ -31,18 +32,30 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Cho phép các tab xuống dòng khi không đủ chỗ */
 }
 
 .tablink {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+    padding: 12px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
     cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    flex: 1; /* Cho phép tab tự động điều chỉnh chiều rộng */
+    text-align: center;
 }
 
 .tablink:hover {
     background-color: #45a049;
+    color: white;
+}
+
+.tablink.active {
+    background-color: #4CAF50; /* Màu xanh lá cho tab được chọn */
+    color: white;
 }
 
 /* Tab nội dung */
@@ -189,6 +202,7 @@ button {
 }
 
 button:hover {
+    background-color: #45a049;
     opacity: 0.8;
 }
 
@@ -244,18 +258,48 @@ button[disabled] {
         font-size: 14px;
     }
 
+    /* Ẩn thanh danh mục trên màn hình nhỏ */
     .tabs {
+        display: none;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
-    .tablink {
-        width: 100%;
+    /* Hiển thị thanh danh mục khi menu được kích hoạt */
+    .tabs.active {
+        display: flex;
+    }
+
+    /* Hamburger menu cho điện thoại */
+    .hamburger-menu {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
         text-align: center;
-        padding: 12px 0;
+        margin: 20px auto;
+    }
+
+    /* Các tab */
+    .tablink {
+        padding: 12px;
+        background-color: #f1f1f1;
+        color: #333;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Màu sắc khi hover hoặc tab đang được chọn */
+    .tablink:hover, .tablink.active {
+        background-color: #4CAF50;
+        color: white;
     }
 }
-
 /* ✅ Tablet (từ 600px đến 1024px) */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
     .container {
@@ -290,3 +334,42 @@ button[disabled] {
         justify-content: space-between;
     }
 }
+/* để chữ số lượng ngang hàng với ô input*/
+.quantity-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa chữ và ô input */
+    justify-content: center;
+}
+
+.product-container {
+    border: 2px solid #ccc; /* Viền bao quanh */
+    padding: 20px; /* Khoảng cách từ viền đến nội dung */
+    margin: 10px; /* Khoảng cách giữa các ô sản phẩm */
+    border-radius: 10px; /* Bo góc cho ô vuông */
+    background-color: #f9f9f9; /* Màu nền nhẹ cho ô */
+    display: flex;
+    flex-direction: column; /* Đảm bảo các thông tin nằm theo chiều dọc */
+    align-items: center; /* Căn giữa nội dung */
+    width: 200px; /* Đảm bảo các ô sản phẩm có chiều rộng cố định */
+    overflow: hidden; /* Ẩn phần ảnh vượt quá */
+    text-align: center; /* Căn giữa văn bản */
+}
+.product-container img {
+    width: 50%; /* Chiều rộng ảnh chiếm toàn bộ container */
+    height: 150px; /* Chiều cao ảnh cố định */
+    object-fit: cover; /* Giữ tỷ lệ ảnh mà không làm méo mó */
+    border-radius: 5px; /* Bo góc cho ảnh */
+}
+
+.product-container h3 {
+    margin: 10px 0; /* Khoảng cách trên dưới giữa tiêu đề */
+    font-size: 18px; /* Kích thước chữ tiêu đề */
+}
+
+.product-container p {
+    margin: 5px 0; /* Khoảng cách trên dưới giữa các đoạn văn */
+}
+
+
+
