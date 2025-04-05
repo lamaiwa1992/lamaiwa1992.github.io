@@ -53,17 +53,17 @@ const items = {
         { id: 45, name: "CF cốt dừa", price: 20000, image: "images/caphe/cf6.jpg" }
     ],
     iced: [
-        { id: 46, name: "Matcha đá xay", price: 25000, image: "images/caphe/cf1.png" },
-        { id: 47, name: "Socola đá xay", price: 25000, image: "images/caphe/cf1.png" },
-        { id: 48, name: "Cacao đá xay", price: 25000, image: "images/caphe/cf1.png" },
-        { id: 49, name: "Việt quất đá xay", price: 25000, image: "images/caphe/cf2.png" }
+        { id: 46, name: "Matcha đá xay", price: 25000, image: "images/daxay/dx1.jpg" },
+        { id: 47, name: "Socola đá xay", price: 25000, image: "images/daxay/dx2.jpg" },
+        { id: 48, name: "Cacao đá xay", price: 25000, image: "images/daxay/dx3.jpg" },
+        { id: 49, name: "Việt quất đá xay", price: 25000, image: "images/daxay/dx4.jpg" }
     ],
     freshMilk: [
-        { id: 50, name: "ST trân châu ĐĐ", price: 20000, image: "images/caphe/cf1.png" },
-        { id: 51, name: "Trân châu ĐĐ kem trứng", price: 25000, image: "images/caphe/cf1.png" },
-        { id: 52, name: "Matcha Trân châu ĐĐ", price: 25000, image: "images/caphe/cf1.png" },
-        { id: 53, name: "ST dâu kem chese", price: 25000, image: "images/caphe/cf1.png" },
-        { id: 54, name: "Nước cam ép", price: 25000, image: "images/caphe/cf2.png" }
+        { id: 50, name: "ST trân châu ĐĐ", price: 20000, image: "images/suatuoi/st1.jfif" },
+        { id: 51, name: "Trân châu ĐĐ kem trứng", price: 25000, image: "images/suatuoi/st2.jfif" },
+        { id: 52, name: "Matcha Trân châu ĐĐ", price: 25000, image: "images/suatuoi/st3.jfif" },
+        { id: 53, name: "ST dâu kem chese", price: 25000, image: "images/suatuoi/st4.jfif" },
+        { id: 54, name: "Nước cam ép", price: 25000, image: "images/suatuoi/st5.jfif" }
     ],
     yogurt: [
         { id: 55, name: "SC đánh đá", price: 25000, image: "images/suachua/sc1.jfif" },
@@ -94,28 +94,28 @@ const items = {
         { id: 76, name: "Khoai Môn", price: 5000, image: "images/toping/tc4.jpg" }
     ],
     snacks: [
-        { id: 77, name: "Xúc xích", price: 10000, image: "images/anvat/av1.jpg" },
-        { id: 78, name: "Hướng dương", price: 10000, image: "images/anvat/av2.jpg" },
-        { id: 79, name: "Hướng dương vị", price: 12000, image: "images/anvat/av3.jpg" },
-        { id: 80, name: "Bỏng", price: 20000, image: "images/anvat/av6.jpg" },
-        { id: 81, name: "Đùi gà", price: 25000, image: "images/anvat/av4.jpg" },
-        { id: 82, name: "Xúc xích hà khẩu", price: 15000, image: "images/anvat/av5.jpg" },
-        { id: 83, name: "Khoai tây lắc phomai", price: 25000, image: "images/anvat/av2.jpg" },
-        { id: 84, name: "Khô gà", price: 25000, image: "images/anvat/av3.jpg" },
-        { id: 85, name: "Khô bò", price: 25000, image: "images/anvat/av6.jpg" },
-        { id: 86, name: "Bim bim", price: 10000, image: "images/anvat/av4.jpg" },
-        { id: 87, name: "Nem chua rán", price: 30000, image: "images/anvat/av5.jpg" },
-        { id: 88, name: "Hotdog", price: 15000, image: "images/anvat/av2.jpg" },
-        { id: 89, name: "Phomai kéo sợi", price: 7000, image: "images/anvat/av3.jpg" },
-        { id: 90, name: "Khoai lang kén", price: 25000, image: "images/anvat/av6.jpg" },
-        { id: 91, name: "Cá viên chiên", price: 25000, image: "images/anvat/av4.jpg" },
-        { id: 92, name: "Viên thập cẩm", price: 35000, image: "images/anvat/av5.jpg" },
-        { id: 93, name: "Gà Chiên Giòn Popcorn", price: 30000, image: "images/anvat/av2.jpg" },
-        { id: 94, name: "Mì Cay Xúc Xích", price: 35000, image: "images/anvat/av3.jpg" },
-        { id: 95, name: "Mì Cay Bò", price: 40000, image: "images/anvat/av6.jpg" },
-        { id: 96, name: "Mẹt Thập Cẩm", price: 50000, image: "images/anvat/av4.jpg" },
-        { id: 97, name: "Hoa quả theo mùa", price: 25000, image: "images/anvat/av5.jpg" },
-        { id: 98, name: "Gà Sốt Thái", price: 35000, image: "images/anvat/av5.jpg" }
+        { id: 77, name: "Xúc xích", price: 10000, image: "images/anvat/av1.jfif" },
+        { id: 78, name: "Hướng dương", price: 10000, image: "images/anvat/av2.jfif" },
+        { id: 79, name: "Hướng dương vị", price: 12000, image: "images/anvat/av3.jfif" },
+        { id: 80, name: "Bỏng", price: 20000, image: "images/anvat/av4.jfif" },
+        { id: 81, name: "Đùi gà", price: 25000, image: "images/anvat/av5.jfif" },
+        { id: 82, name: "Xúc xích hà khẩu", price: 15000, image: "images/anvat/av6.jfif" },
+        { id: 83, name: "Khoai tây lắc phomai", price: 25000, image: "images/anvat/av7.jfif" },
+        { id: 84, name: "Khô gà", price: 25000, image: "images/anvat/av8.jfif" },
+        { id: 85, name: "Khô bò", price: 25000, image: "images/anvat/av9.jfif" },
+        { id: 86, name: "Bim bim", price: 10000, image: "images/anvat/av10.jfif" },
+        { id: 87, name: "Nem chua rán", price: 30000, image: "images/anvat/av11.jfif" },
+        { id: 88, name: "Hotdog", price: 15000, image: "images/anvat/av12.jfif" },
+        { id: 89, name: "Phomai kéo sợi", price: 7000, image: "images/anvat/av13.jfif" },
+        { id: 90, name: "Khoai lang kén", price: 25000, image: "images/anvat/av14.jfif" },
+        { id: 91, name: "Cá viên chiên", price: 25000, image: "images/anvat/av15.jfif" },
+        { id: 92, name: "Viên thập cẩm", price: 35000, image: "images/anvat/av16.jfif" },
+        { id: 93, name: "Gà Chiên Giòn Popcorn", price: 30000, image: "images/anvat/av17.jfif" },
+        { id: 94, name: "Mì Cay Xúc Xích", price: 35000, image: "images/anvat/av18.jfif" },
+        { id: 95, name: "Mì Cay Bò", price: 40000, image: "images/anvat/av19.jfif" },
+        { id: 96, name: "Mẹt Thập Cẩm", price: 50000, image: "images/anvat/av20.jfif" },
+        { id: 97, name: "Hoa quả theo mùa", price: 25000, image: "images/anvat/av21.jfif" },
+        { id: 98, name: "Gà Sốt Thái", price: 35000, image: "images/anvat/av22.jfif" }
     ]
 };
 // Lưu trữ số lượng món đã chọn cho từng món trong từng danh mục

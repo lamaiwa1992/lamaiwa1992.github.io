@@ -14,7 +14,7 @@ body {
 .container {
     width: 50%;
     margin: 50px auto;
-    background-image: url('/images/CHONMON.jpg');
+    background-image: url('/order/images/CHONMON.jpg');
     color: #333;
     padding: 20px;
     border-radius: 8px;
@@ -351,7 +351,8 @@ button[disabled] {
     background-color: #f9f9f9; /* Màu nền nhẹ cho ô */
     display: flex;
     flex-direction: column; /* Đảm bảo các thông tin nằm theo chiều dọc */
-    align-items: center; /* Căn giữa nội dung */
+    justify-content: center; /* canh giữa ngang */
+    align-items: center;     /* canh giữa dọc */
     width: 200px; /* Đảm bảo các ô sản phẩm có chiều rộng cố định */
     overflow: hidden; /* Ẩn phần ảnh vượt quá */
     text-align: center; /* Căn giữa văn bản */

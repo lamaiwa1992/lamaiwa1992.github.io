@@ -68,13 +68,19 @@
             <h3>Thông tin đơn hàng</h3>
             <div id="orderSummary"></div>
         </div>
+        <!-- Nút xác nhận đơn hàng -->
+        <button onclick="goToOrder()">Xác nhận đơn hàng</button>
         <!-- Nút xóa tất cả lựa chọn -->
         <button onclick="resetSelections()">Xóa tất cả lựa chọn</button>
 
-        <!-- Nút xác nhận đơn hàng -->
-        <button onclick="goToOrder()">Xác nhận đơn hàng</button>
-    </div>
 
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            alert('Chào bạn!Hiện tại chức năng order món vẫn đang trong thời gian chỉnh sửa.xin vui lòng gọi số điện thoại 0342.42.3258 để đặt món.Xin cảm ơn!!!');
+        });
+    </script>
+    
     <script src="js/Menu.js"></script>
 </body>
 </html>

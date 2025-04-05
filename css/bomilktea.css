@@ -764,4 +764,45 @@
      margin-right: 8px;
      font-size: 24px;
  }
- 
+ /* Nút đặt món (bên trái) */
+.datmon-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #007bff; /* Màu xanh dương */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.datmon-icon:hover {
+  background-color: #0069d9;
+  transform: scale(1.1);
+}
+.datmon-icon .datmon-icon-img {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+/* Xử lý khi chế độ điện thoại 2 nút chồng nhau  */
+@media (max-width: 600px) {
+  /* Nút gọi ngay ở trên */
+  .goi-icon {
+      bottom: 80px; /* đẩy lên cao */
+      right: 20px;
+  }
+
+  /* Nút đặt món nằm ngay dưới nút gọi */
+  .datmon-icon {
+      bottom: 20px; /* sát mép dưới */
+      left: auto;   /* bỏ vị trí bên trái */
+      right: 20px;  /* chuyển sang bên phải */
+  }
+}
+
