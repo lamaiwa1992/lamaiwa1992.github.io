@@ -619,14 +619,18 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
                 </div>
             </section>
         </footer>
-        <!-- Nút gọi ngay -->
-        <a href="tel:0342423258" class="goi-icon">
-            <span class="goi-icon-img">📞</span> Gọi món ngay
-        </a>
-        <!-- Nút đặt món -->
-        <a href="order/chonmon.html" class="datmon-icon">
-            <span class="datmon-icon-img">📝</span> Đặt món ngay
-        </a>
+<!-- Nút gọi ngay -->
+<a href="tel:0342423258" class="side-icon toggle-btn" id="goiBtn">
+    <span class="icon-img">📞</span>
+    <span class="icon-text">Gọi món ngay</span>
+</a>
+
+<!-- Nút đặt món -->
+<a href="order/chonmon.html" class="side-icon toggle-btn" id="datmonBtn">
+    <span class="icon-img">📝</span>
+    <span class="icon-text">Đặt món ngay</span>
+</a>
+
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -644,6 +648,24 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
                 button.classList.toggle('open'); // Thêm hoặc bỏ class 'open' để thay đổi kích thước
             }
         </script>
+        <script>
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    // Nếu chưa mở thì mở, nếu đã mở thì để mặc định hành vi
+                    if (!btn.classList.contains('open')) {
+                        e.preventDefault(); // Ngăn chuyển trang hoặc gọi
+                        btn.classList.add('open');
+        
+                        // Đóng sau 5s nếu không click tiếp
+                        setTimeout(() => {
+                            btn.classList.remove('open');
+                        }, 5000);
+                    }
+                    // Nếu đã mở rồi thì để thực hiện link
+                });
+            });
+        </script>
+        
 
 
     </body>
