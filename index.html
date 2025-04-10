@@ -28,6 +28,7 @@
         <link href="css/aos.css" rel="stylesheet">
 
         <link href="css/bomilktea.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!--
 
 trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23 tháng 2 năm 2025
@@ -619,18 +620,40 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
                 </div>
             </section>
         </footer>
-<!-- Nút gọi ngay -->
-<a href="tel:0342423258" class="side-icon toggle-btn" id="goiBtn">
-    <span class="icon-img">📞</span>
-    <span class="icon-text">Gọi món ngay</span>
-</a>
-
-<!-- Nút đặt món -->
-<a href="order/chonmon.html" class="side-icon toggle-btn" id="datmonBtn">
-    <span class="icon-img">📝</span>
-    <span class="icon-text">Đặt món ngay</span>
-</a>
-
+<!--/* icon liên hệ */-->
+        <div class="contact-button-wrapper">
+            <!-- Nút liên hệ chính -->
+            <div id="contactToggle" class="contact-button arcontactus-message-button">
+            <i class="fas fa-headset"></i>
+            <p>Liên hệ</p>
+            </div>
+            <!-- Panel hiện khi mở -->
+            <div id="contactPanel" class="contact-panel hidden">
+            <!-- Nút đóng -->
+            <div id="closePanel" class="close-button">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="contact-title">Liên hệ nhanh</div>
+            <div class="icons">
+                <!-- Gọi -->
+                <a href="tel:0342423258" class="icon-item">
+                <span class="icon"><i class="fas fa-phone-alt"></i></span>
+                <span class="icon-label">Gọi món ngay</span>
+                </a>
+                <!-- Đặt món -->
+                <a href="order/chonmon.html" class="icon-item">
+                <span class="icon"><i class="fas fa-utensils"></i></span>
+                <span class="icon-label">Đặt món online</span>
+                </a>
+                <!-- Zalo -->
+                <a href="https://zalo.me/yourzaloid" target="_blank" class="icon-item">
+                <span class="icon"><i class="fab fa-facebook-messenger"></i></span>
+                <span class="icon-label">Zalo</span>
+                </a>
+            </div>
+            </div>
+        </div>
+<!--/* icon liên hệ */-->
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -649,21 +672,19 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
             }
         </script>
         <script>
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
-                btn.addEventListener('click', function (e) {
-                    // Nếu chưa mở thì mở, nếu đã mở thì để mặc định hành vi
-                    if (!btn.classList.contains('open')) {
-                        e.preventDefault(); // Ngăn chuyển trang hoặc gọi
-                        btn.classList.add('open');
-        
-                        // Đóng sau 5s nếu không click tiếp
-                        setTimeout(() => {
-                            btn.classList.remove('open');
-                        }, 5000);
-                    }
-                    // Nếu đã mở rồi thì để thực hiện link
-                });
+            /* icon liên hệ */
+            const toggle = document.getElementById('contactToggle');
+            const panel = document.getElementById('contactPanel');
+            const close = document.getElementById('closePanel');
+            // Mở panel
+            toggle.addEventListener('click', () => {
+            panel.classList.remove('hidden');
             });
+            // Đóng panel
+            close.addEventListener('click', () => {
+            panel.classList.add('hidden');
+            });
+            /* icon liên hệ */
         </script>
         
 
