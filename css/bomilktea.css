@@ -958,7 +958,7 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 25px;
-  color: #ff5e57;
+  color: #000000;
 }
 
 .contact-info-custom p {
@@ -968,7 +968,7 @@
 }
 
 .contact-info-custom strong {
-  color: #ff5e57;
+  color: #000000;
 }
 
 .contact-link-facebook,

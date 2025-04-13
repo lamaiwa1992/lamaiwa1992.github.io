@@ -14,7 +14,7 @@ body {
 .container {
     width: 50%;
     margin: 50px auto;
-    background-image: url('/order/images/CHONMON.jpg');
+    background-color: #f1fafc;
     color: #333;
     padding: 20px;
     border-radius: 8px;
