@@ -916,125 +916,17 @@
   border-radius: 50px;
   transition: all 0.3s ease;
 }
-/* icon liên hệ */
+/* form liên he bo milk tea*/
 
-/* lien he bomilk tea  */
-.contact-section-custom {
-  width: 100%;
-  background-color: #fffdfb;
-  padding: 60px 0;
-}
-
-.contact-container-custom {
-  width: 100%;
-  padding: 0 40px;
-  box-sizing: border-box;
-}
-
-.contact-row-split {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-
-.contact-left-img,
-.contact-wrapper-custom {
-  flex: 1;
-  min-width: 300px;
-  max-width: 600px;
-}
-
-.contact-image {
-  width: 100%;
+.contact-box {
+  border: 2px solid #e0e0e0;
   border-radius: 16px;
-  object-fit: cover;
-  max-height: 400px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-title-custom {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #000000;
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
-
-.contact-info-custom p {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  color: #444;
-}
-
-.contact-info-custom strong {
-  color: #000000;
-}
-
-.contact-link-facebook,
-.contact-phone-link {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-buttons-custom {
-  margin-top: 25px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.btn-call-custom,
-.btn-fb-custom {
-  padding: 12px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.3s ease;
-}
-
-.btn-call-custom {
-  background-color: #28a745;
-}
-
-.btn-call-custom:hover {
-  background-color: #218838;
-}
-
-.btn-fb-custom {
-  background-color: #1877f2;
-}
-
-.btn-fb-custom:hover {
-  background-color: #0f66dd;
-}
-
-@media (max-width: 768px) {
-  .contact-row-split {
-      flex-direction: column;
-  }
-
-  .contact-buttons-custom {
-      flex-direction: column;
-      align-items: stretch;
-  }
-
-  .btn-call-custom,
-  .btn-fb-custom {
-      width: 100%;
-      justify-content: center;
-  }
-
-  .contact-container-custom {
-      padding: 0 20px;
-  }
-}
-
-
-/* lien he bomilk tea  */
