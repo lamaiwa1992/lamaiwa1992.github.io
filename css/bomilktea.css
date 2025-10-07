@@ -930,3 +930,20 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+/* CSS nhấp nháy */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.free-ship {
+    color: red;              /* Màu chữ nổi bật */
+    font-weight: bold;        /* In đậm */
+    background: yellow;       /* Nền chữ */
+    padding: 5px 10px;        /* Khoảng cách xung quanh */
+    border-radius: 5px;       /* Bo tròn góc */
+    font-size: 18px;         /* Kích thước chữ */
+    text-transform: uppercase;/* Viết hoa */
+    animation: blink 1s infinite; /* Nhấp nháy */
+}
